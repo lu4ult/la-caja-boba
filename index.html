@@ -4,7 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="https://pngimg.com/uploads/tv/tv_PNG39225.png">
+    <script type="text/javascript" src="scripts.js"></script>
     <title>La caja boba</title>
+    <script>getDolar().then(updateValues);</script>
 </head>
 <body>
     <header>
@@ -24,7 +26,31 @@
         </ul>
       </details>
 
+      <details>
+        <summary>Dólar</summary>
+        <div class="dolar-container">
+            <div class="precio-dolar">
+                <span class="precio-dolar__titulo">OFICIAL</span>
+                <span class="precio-dolar__valor-compra" id="oficial-compra">0.00</span>
+                <span class="precio-dolar__valor-venta" id="oficial-venta">0.00</span>
+            </div>
+            <div class="precio-dolar">
+                <span class="precio-dolar__titulo">BLUE</span>
+                <span class="precio-dolar__valor-compra" id="blue-compra">0.00</span>
+                <span class="precio-dolar__valor-venta" id="blue-venta">0.00</span>
+            </div>
+        </div>
+      </details>
+
     <div class="container">
+        <!--
+        <iframe></iframe>
+        <iframe></iframe>
+        <iframe></iframe>
+        <iframe></iframe>
+        <iframe></iframe>
+        <iframe></iframe>
+        -->
         <iframe src="https://www.youtube.com/embed/jF3jb9JDBr0" title="C5N" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/WIPjYtR2N6s" title="A24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/wHn1_QVoXGM" title="TN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

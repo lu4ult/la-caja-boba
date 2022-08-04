@@ -33,15 +33,21 @@ header div img {
 
 h1 {
     margin-left: 48px;
+    color: #fff;
 }
 
-:visited {
-    color: green;
+a:visited {
     text-decoration: none;
 }
 
-:active {
+a:active {
     text-decoration: none;
+}
+
+details {
+    font-size: 1.2rem;
+    color: #00FF41;
+    margin: 8px 32px;
 }
 
 

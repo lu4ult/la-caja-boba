@@ -31,7 +31,6 @@ header div img {
 }
 
 
-
 h1 {
     margin-left: 48px;
     color: #fff;
@@ -75,10 +74,9 @@ details {
     row-gap: 8px;
 }
 
-.precio-dolar:hover {
-    background: #fff;
-    border-color: blue;
-    color: blue;
+.precio-dolar span:hover {
+    /*background: #fff;*/
+    color: #ff00be;
     transition: all 0.3s;
 }
 
@@ -104,6 +102,22 @@ details {
     content: "$";
 }
 
+/****** Coder House *****/
+
+.dancing-dolar {
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(#222 10%, green 60%, #222 70%);
+    z-index: -100;
+    font-size: 5rem;
+    animation-name: dolar-danzante;
+    animation-duration: 5s;
+    animation-delay: 2;    /*cuánto tarda en iniciarse desde que carga la página*/
+    animation-iteration-count: infinite; /*loop*/
+    animation-timing-function: ease-in;   /*flujo, que empiece lento y luego rapido, siempre igual, etc*/
+    text-align: center;
+
+}
 
 .container {
     margin: 12px 4px;
@@ -121,12 +135,12 @@ details {
 footer {
     background: #000;
     width: 100%;
-    height: 8vh;
+    height: 60px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: nowrap;
     margin-top: 96px;
-    position: sticky;
+    position: absolute;
     bottom: 0;
 }
 
@@ -137,7 +151,7 @@ footer {
 }
 footer div {
     /*border: 1px solid green;*/
-    margin: 8px;
+    margin: 4px;
 }
 
 footer div img {
@@ -145,11 +159,40 @@ footer div img {
     height: 100%;
 }
 
+@keyframes dolar-danzante {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(45deg);
+    }
+
+    90% {
+        transform: rotate(3300deg); /*Esto lo descubrí por error*/
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 @media only screen and (max-width: 700px) {
+   /* footer {
+        position: relative;
+        bottom: 0;
+    }*/
     .container {
         margin: 48px 4px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         border: 2px solid #eee;
+    }
+
+    .precio-dolar {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "titulo"
+        "compra"
+        "venta";
     }
 }

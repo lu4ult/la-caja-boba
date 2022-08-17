@@ -142,7 +142,7 @@ footer {
     justify-content: space-evenly;
     flex-wrap: nowrap;
     margin-top: 96px;
-    position: absolute;
+    position: sticky;
     bottom: 0;
 }
 

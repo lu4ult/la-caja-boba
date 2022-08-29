@@ -21,8 +21,10 @@ body {
     display: flex;
     flex-direction: column;
     /* width: 98%; */
-    width: 96vw;
+    width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 header {

@@ -1,0 +1,234 @@
+$debug-level:0;             //1: Agrega borde rojo (outline, no border para que no ocupe espacio) para ver las cajas
+                            //2: idem con !important
+                            //3: idem + background
+
+$baseSize: calc(1rem + 1vw);
+$verde: #00FF41;
+
+::-webkit-scrollbar {
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00FF41;
+    border-radius: 50px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    padding: 4px;
+    //padding: 20px;
+
+    @if $debug-level == 1 {
+        outline: 1px solid red;
+    }
+
+    @if $debug-level == 2 {
+        outline: 1px solid red !important;
+    }
+
+    @if $debug-level == 3 {
+        outline: 1px solid red !important;
+        background: rgba(250,10,50, 0.15);
+    }
+
+    font-size: calc(1* $baseSize);
+
+    // color: $azul-fuerte;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+
+// img {
+//     width: $baseSize;
+//     height: $baseSize;
+// }
+
+.fila {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+body {
+    display: grid;
+    background: #000;
+    grid-template-areas:
+        "header"
+        "dolar"
+        "main"
+        "cafecito"
+        "footer";
+
+    header {
+        grid-area: header;
+        @extend .fila;
+
+        img {
+            width: 100px;
+            aspect-ratio: 1;
+        }
+
+    }
+
+    .dolar-container {
+        grid-area: dolar;
+        @extend .fila;
+        justify-content: space-around;
+
+        .precio-dolar {
+            display: grid;
+            border: 3px solid #00FF41;
+
+            margin-bottom: 10px;
+            border-radius: 25px;
+            box-shadow: 0 0 15px 5px rgba(0,255,0,0.7);
+            transition: all .5s;
+            &:hover {
+                transition: all 3s;
+                background: #ff00be;
+                box-shadow: 0 0 15px 5px #ff00be;
+                border-color: #ff00be;
+            }
+
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "titulo"
+                "compra"
+                "venta";
+            // justify-content: center;
+
+            .precio-dolar__titulo {
+                grid-area: titulo;
+                justify-self: center;
+                font-size: calc(1.1* $baseSize);
+            }
+
+            .precio-dolar__valor-compra {
+                grid-area: compra;
+                justify-self: center;
+                font-size: calc(0.8* $baseSize);
+                margin: 2px 20px;
+            }
+
+            .precio-dolar__valor-venta {
+                grid-area: venta;
+                justify-self: center;
+                font-size: calc(0.8* $baseSize);
+            }
+
+            span {
+                color: #fff;
+                font-family: 'Roboto', sans-serif;
+            }
+        }
+
+    }
+
+    .main-container {
+        grid-area: main;
+
+        display: grid;
+        gap: 0;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        iframe {
+            // border: 5px solid green;
+            justify-self: center;
+            width: 80%;
+            aspect-ratio: 16/9;
+        }
+    }
+
+    .cafecito {
+        grid-area: cafecito;
+        @extend .fila;
+    }
+
+    footer {
+        grid-area: footer;
+        @extend .fila;
+        justify-content: space-evenly;
+
+        border-top: 3px solid #ccc;
+        // min-height: 100px;
+        // max-height: 150px;
+
+        #github-logo {
+            border: 2px solid #fff;
+            background: #fff;
+            border-radius: 50%;
+        }
+        div {
+            @extend .fila;
+            // height: 100%;
+            // aspect-ratio: 1;
+            img {
+                @extend .fila;
+                // height: 100%;
+                // max-height: 100px;
+                // width: auto;
+                width: 50px;
+                aspect-ratio: 1;
+            }
+        }
+
+    // margin-top: 96px;
+    //position: sticky;
+    //bottom: 0;
+
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    body {
+        .dolar-container {
+            .precio-dolar {
+                width: 30%;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                "titulo titulo"
+                "compra venta";
+            }
+        }
+
+        .main-container {
+            grid-template-columns: repeat(2, 1fr);
+            iframe {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+        }
+
+        footer {
+            div {
+                img {
+                    width: 75px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        .main-container {
+            grid-template-columns: repeat(3, 1fr);
+            iframe {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+        }
+    }
+}

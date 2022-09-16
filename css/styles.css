@@ -21,7 +21,7 @@ a {
   color: #fff;
 }
 
-.fila, body footer div img, body footer div, body footer, body .cafecito, body .dolar-container, body header {
+.fila, body footer div img, body footer div, body footer, body .cafe a, body .cafe, body .dolar-container, body header {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,11 +44,11 @@ body header img {
 body .dolar-container {
   grid-area: dolar;
   justify-content: space-around;
+  margin-bottom: 1rem;
 }
 body .dolar-container .precio-dolar {
   display: grid;
   border: 3px solid #00FF41;
-  margin-bottom: 10px;
   border-radius: 25px;
   box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.7);
   transition: all 0.5s;
@@ -93,12 +93,14 @@ body .main-container iframe {
   width: 80%;
   aspect-ratio: 16/9;
 }
-body .cafecito {
+body .cafe {
   grid-area: cafecito;
+  margin-top: 1rem;
 }
 body footer {
   grid-area: footer;
   justify-content: space-evenly;
+  margin-top: 0.5rem;
   border-top: 3px solid #ccc;
 }
 body footer #github-logo {

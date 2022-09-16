@@ -8,8 +8,10 @@ Ideal cuando queres ver una noticia en particular pero están dos horas hablando
 
 ## Ver online:
 
+<a target="_blank" href="https://animated-biscochitos-fe56b0.netlify.app/">Ver Online!</a>
+
 ```sh
-https://lu4ult.github.io/la-caja-boba/index.html
+https://animated-biscochitos-fe56b0.netlify.app/
 ```
 
 Repo:

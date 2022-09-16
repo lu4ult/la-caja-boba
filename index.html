@@ -2,11 +2,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- <meta http-equiv = "refresh" content = "3; url = https://animated-biscochitos-fe56b0.netlify.app/"/> -->
+
+    <!-- Primary Meta Tags -->
+    <title>La caja Boba</title>
+    <meta name="title" content="La caja Boba">
+    <meta name="description" content="La caja Boba permite ver varios canales de la TV argentina simultáneamente, además de la camára de diputados y senadores en vivo.">
+    <meta name="keywords" content="la caja boba, tv, tv argentina, cámara de senadores en vivo, cámara de diputados en vivo, lautaro tourn, lu4ult, tv online">
+    <meta name="author" content="Lautaro Tourn">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="La caja Boba">
+    <meta property="og:description" content="La caja Boba permite ver varios canales de la TV argentina simultáneamente, además de la camára de diputados y senadores en vivo.">
+    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="La caja Boba">
+    <meta property="twitter:description" content="La caja Boba permite ver varios canales de la TV argentina simultáneamente, además de la camára de diputados y senadores en vivo.">
+    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
     <link rel="icon" type="image/x-icon" href="https://pngimg.com/uploads/tv/tv_PNG39225.png">
     <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/live-tv-1780813-1514389.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +41,18 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "b8t771pxph");
     </script>
-    <script type="text/javascript" src="scripts.js"></script>
+
+    <!-- Animate.style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script type="text/javascript" src="js/dolar.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
-    <title>La caja boba</title>
-    <!-- <script>getDolar().then(updateValues);</script> -->
+
+    <script>getDolar().then(updateValues);</script>
 </head>
 <body>
     <header>
@@ -34,14 +64,19 @@
             <h1>La caja boba</h1>
         </a>
     </header>
+        <div class="cafe animate__animated animate__fadeInDownBig">
+            <a class="animate__animated animate__heartBeat animate__delay-3s animate__repeat-3" href='https://cafecito.app/lu4ult' rel='noopener' target='_blank'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>
+        </div>
+
+
       <div class="dolar-container">
-        <div class="precio-dolar">
+        <div class="precio-dolar" data-aos="flip-left">
             <span class="precio-dolar__titulo">OFICIAL</span>
             <span class="precio-dolar__valor-compra" id="oficial-compra">123.45</span>
             <span class="precio-dolar__valor-venta" id="oficial-venta">123.45</span>
         </div>
         <!-- <span class="dancing-dolar">$</span> -->
-        <div class="precio-dolar">
+        <div class="precio-dolar" data-aos="flip-right">
             <span class="precio-dolar__titulo">BLUE</span>
             <span class="precio-dolar__valor-compra" id="blue-compra">123.45</span>
             <span class="precio-dolar__valor-venta" id="blue-venta">123.45</span>
@@ -57,10 +92,6 @@
         <iframe src="https://www.youtube.com/embed/HlhZ0XZHHaw" title="LN+" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <div class=".cafecito">
-
-    </div>
-
     <footer>
         <div><a target="_blank" href="https://www.instagram.com/lu4ult.hex/"><img src="./images/ig.png" alt="Link a perfil en Instagram"></a></div>
         <div class="animate__animated animate__shakeX"><a target="_blank" href="https://github.com/lu4ult"><img id="github-logo" src="./images/github.png" alt="Link a perfil en Github"></a></div>
@@ -68,5 +99,9 @@
         <!--<div class="animate__animated animate__fadeInDownBig"><a target="_blank" href="https://www.linkedin.com/in/lautaro-tourn/"><svg><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div>-->
         <div><a target="_blank" href="https://wa.me/542954692293?text=Hola%21%0AVengo%20de%20%2ALa%20Caja%20Boba%2A"><img src="./images/wa.png" alt="Link a chat en Whatsapp"></a></div>
     </footer>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

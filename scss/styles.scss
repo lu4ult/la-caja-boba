@@ -71,6 +71,13 @@ body {
         "cafecito"
         "footer";
 
+    // grid-template-areas:
+    //     "header"
+    //     "cafecito"
+    //     "dolar"
+    //     "main"
+    //     "footer";
+
     header {
         grid-area: header;
         @extend .fila;
@@ -86,12 +93,13 @@ body {
         grid-area: dolar;
         @extend .fila;
         justify-content: space-around;
+        margin-bottom: 1rem;
 
         .precio-dolar {
             display: grid;
             border: 3px solid #00FF41;
 
-            margin-bottom: 10px;
+            //margin-bottom: 10px;
             border-radius: 25px;
             box-shadow: 0 0 15px 5px rgba(0,255,0,0.7);
             transition: all .5s;
@@ -151,9 +159,13 @@ body {
         }
     }
 
-    .cafecito {
-        grid-area: cafecito;
+    .cafe {
+      grid-area: cafecito;
+      margin-top: 1rem;
+      @extend .fila;
+      a {
         @extend .fila;
+      }
     }
 
     footer {
@@ -161,6 +173,7 @@ body {
         @extend .fila;
         justify-content: space-evenly;
 
+        margin-top: 0.5rem;
         border-top: 3px solid #ccc;
         // min-height: 100px;
         // max-height: 150px;
@@ -183,11 +196,6 @@ body {
                 aspect-ratio: 1;
             }
         }
-
-    // margin-top: 96px;
-    //position: sticky;
-    //bottom: 0;
-
     }
 }
 

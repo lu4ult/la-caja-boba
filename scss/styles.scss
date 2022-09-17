@@ -233,10 +233,38 @@ body {
     body {
         .main-container {
             grid-template-columns: repeat(3, 1fr);
+
             iframe {
                 width: 100%;
                 aspect-ratio: 16/9;
+                transition: all .3s;
+            }
+
+            .left {
+                &:hover {
+                    transition: all .3s;
+                    transition-delay: 2s;
+                    transform: translateX(50%) scale(2);
+                }
+            }
+
+            .center {
+                &:hover {
+                    transition: all .3s;
+                    transition-delay: 2s;
+                    transform: translateX(0) scale(2);
+                }
+            }
+
+            .right {
+                &:hover {
+                    //position: relative;
+                    transition: all .3s;
+                    transition-delay: 2s;
+                    transform: translateX(-50%) scale(2);
+                }
             }
         }
     }
 }
+

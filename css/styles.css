@@ -137,5 +137,21 @@ body footer div img {
   body .main-container iframe {
     width: 100%;
     aspect-ratio: 16/9;
+    transition: all 0.3s;
+  }
+  body .main-container .left:hover {
+    transition: all 0.3s;
+    transition-delay: 2s;
+    transform: translateX(50%) scale(2);
+  }
+  body .main-container .center:hover {
+    transition: all 0.3s;
+    transition-delay: 2s;
+    transform: translateX(0) scale(2);
+  }
+  body .main-container .right:hover {
+    transition: all 0.3s;
+    transition-delay: 2s;
+    transform: translateX(-50%) scale(2);
   }
 }/*# sourceMappingURL=styles.css.map */

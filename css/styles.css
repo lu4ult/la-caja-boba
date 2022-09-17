@@ -1,0 +1,141 @@
+::-webkit-scrollbar {
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00FF41;
+  border-radius: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding: 4px;
+  font-size: calc(1 * (1rem + 1vw));
+}
+
+a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+.fila, body footer div img, body footer div, body footer, body .cafe a, body .cafe, body .dolar-container, body header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+body {
+  display: grid;
+  background: #000;
+  grid-template-areas: "header" "dolar" "main" "cafecito" "footer";
+}
+body header {
+  grid-area: header;
+}
+body header img {
+  width: 100px;
+  aspect-ratio: 1;
+}
+body .dolar-container {
+  grid-area: dolar;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+body .dolar-container .precio-dolar {
+  display: grid;
+  border: 3px solid #00FF41;
+  border-radius: 25px;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.7);
+  transition: all 0.5s;
+  grid-template-columns: 1fr;
+  grid-template-areas: "titulo" "compra" "venta";
+}
+body .dolar-container .precio-dolar:hover {
+  transition: all 3s;
+  background: #ff00be;
+  box-shadow: 0 0 15px 5px #ff00be;
+  border-color: #ff00be;
+}
+body .dolar-container .precio-dolar .precio-dolar__titulo {
+  grid-area: titulo;
+  justify-self: center;
+  font-size: calc(1.1 * (1rem + 1vw));
+}
+body .dolar-container .precio-dolar .precio-dolar__valor-compra {
+  grid-area: compra;
+  justify-self: center;
+  font-size: calc(0.8 * (1rem + 1vw));
+  margin: 2px 20px;
+}
+body .dolar-container .precio-dolar .precio-dolar__valor-venta {
+  grid-area: venta;
+  justify-self: center;
+  font-size: calc(0.8 * (1rem + 1vw));
+}
+body .dolar-container .precio-dolar span {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+body .main-container {
+  grid-area: main;
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+}
+body .main-container iframe {
+  justify-self: center;
+  width: 80%;
+  aspect-ratio: 16/9;
+}
+body .cafe {
+  grid-area: cafecito;
+  margin-top: 1rem;
+}
+body footer {
+  grid-area: footer;
+  justify-content: space-evenly;
+  margin-top: 0.5rem;
+  border-top: 3px solid #ccc;
+}
+body footer #github-logo {
+  border: 2px solid #fff;
+  background: #fff;
+  border-radius: 50%;
+}
+body footer div img {
+  width: 50px;
+  aspect-ratio: 1;
+}
+
+@media only screen and (min-width: 767px) {
+  body .dolar-container .precio-dolar {
+    width: 30%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo titulo" "compra venta";
+  }
+  body .main-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body .main-container iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  body footer div img {
+    width: 75px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body .main-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body .main-container iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+}/*# sourceMappingURL=styles.css.map */

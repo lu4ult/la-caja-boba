@@ -67,9 +67,10 @@ body {
     grid-template-areas:
         "header"
         "dolar"
-        "main"
+        "contenedor"
         "cafecito"
-        "footer";
+        "footer"
+        "main";
 
     // grid-template-areas:
     //     "header"
@@ -145,7 +146,7 @@ body {
     }
 
     .main-container {
-        grid-area: main;
+        grid-area: contenedor;
 
         display: grid;
         gap: 0;
@@ -161,7 +162,10 @@ body {
 
     .cafe {
       grid-area: cafecito;
-      margin-top: 1rem;
+      margin-top: calc(1 * $baseSize);
+      z-index: 20;
+      position: sticky;
+      top:0;
       @extend .fila;
       a {
         @extend .fila;
@@ -170,11 +174,16 @@ body {
 
     footer {
         grid-area: footer;
+        z-index: 10;
         @extend .fila;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        position: sticky;
+        top:0;
 
-        margin-top: 0.5rem;
+        margin-top: calc(1 * $baseSize);
         border-top: 3px solid #ccc;
+        border-bottom: 3px solid #ccc;
+        background: #000;
         // min-height: 100px;
         // max-height: 150px;
 
@@ -195,6 +204,22 @@ body {
                 width: 50px;
                 aspect-ratio: 1;
             }
+        }
+    }
+
+    main {
+        grid-area: main;
+        @extend .fila;
+        flex-direction: column;
+        margin: 1rem calc(2 * $baseSize);
+        h2 {
+            font-size: calc(2 * $baseSize);
+            color: $verde;
+        }
+        p {
+            color: $verde;
+            width: 50%;
+            font-size: calc(0.5 * $baseSize);
         }
     }
 }

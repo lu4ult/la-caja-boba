@@ -21,7 +21,7 @@ a {
   color: #fff;
 }
 
-.fila, body footer div img, body footer div, body footer, body .cafe a, body .cafe, body .dolar-container, body header {
+.fila, body main, body footer div img, body footer div, body footer, body .cafe a, body .cafe, body .dolar-container, body header {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -32,7 +32,7 @@ a {
 body {
   display: grid;
   background: #000;
-  grid-template-areas: "header" "dolar" "main" "cafecito" "footer";
+  grid-template-areas: "header" "dolar" "contenedor" "cafecito" "footer" "main";
 }
 body header {
   grid-area: header;
@@ -82,7 +82,7 @@ body .dolar-container .precio-dolar span {
   font-family: "Roboto", sans-serif;
 }
 body .main-container {
-  grid-area: main;
+  grid-area: contenedor;
   display: grid;
   gap: 0;
   grid-template-columns: repeat(1, 1fr);
@@ -95,13 +95,21 @@ body .main-container iframe {
 }
 body .cafe {
   grid-area: cafecito;
-  margin-top: 1rem;
+  margin-top: calc(1 * (1rem + 1vw));
+  z-index: 20;
+  position: sticky;
+  top: 0;
 }
 body footer {
   grid-area: footer;
-  justify-content: space-evenly;
-  margin-top: 0.5rem;
+  z-index: 10;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  margin-top: calc(1 * (1rem + 1vw));
   border-top: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  background: #000;
 }
 body footer #github-logo {
   border: 2px solid #fff;
@@ -111,6 +119,20 @@ body footer #github-logo {
 body footer div img {
   width: 50px;
   aspect-ratio: 1;
+}
+body main {
+  grid-area: main;
+  flex-direction: column;
+  margin: 1rem calc(2 * (1rem + 1vw));
+}
+body main h2 {
+  font-size: calc(2 * (1rem + 1vw));
+  color: #00FF41;
+}
+body main p {
+  color: #00FF41;
+  width: 50%;
+  font-size: calc(0.5 * (1rem + 1vw));
 }
 
 @media only screen and (min-width: 767px) {

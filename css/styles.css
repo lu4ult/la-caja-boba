@@ -38,7 +38,7 @@ body header {
   grid-area: header;
 }
 body header img {
-  width: 100px;
+  max-height: 75px;
   aspect-ratio: 1;
 }
 body .dolar-container {
@@ -70,7 +70,7 @@ body .dolar-container .precio-dolar .precio-dolar__valor-compra {
   grid-area: compra;
   justify-self: center;
   font-size: calc(0.8 * (1rem + 1vw));
-  margin: 2px 20px;
+  margin: 2px 16px;
 }
 body .dolar-container .precio-dolar .precio-dolar__valor-venta {
   grid-area: venta;
@@ -119,12 +119,13 @@ body footer #github-logo {
   border-radius: 50%;
 }
 body footer div img {
-  width: 50px;
+  width: 45px;
   aspect-ratio: 1;
 }
 body main {
   grid-area: main;
   flex-direction: column;
+  margin-bottom: calc(5 * (1rem + 1vw));
 }
 body main h2 {
   margin-top: calc(4 * (1rem + 1vw));

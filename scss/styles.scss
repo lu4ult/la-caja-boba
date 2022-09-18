@@ -84,10 +84,10 @@ body {
         @extend .fila;
 
         img {
-            width: 100px;
+            //width: 100px;
+            max-height: 75px;
             aspect-ratio: 1;
         }
-
     }
 
     .dolar-container {
@@ -128,7 +128,7 @@ body {
                 grid-area: compra;
                 justify-self: center;
                 font-size: calc(0.8* $baseSize);
-                margin: 2px 20px;
+                margin: 2px 16px;
             }
 
             .precio-dolar__valor-venta {
@@ -203,7 +203,7 @@ body {
                 // height: 100%;
                 // max-height: 100px;
                 // width: auto;
-                width: 50px;
+                width: 45px;
                 aspect-ratio: 1;
             }
         }
@@ -213,7 +213,7 @@ body {
         grid-area: main;
         @extend .fila;
         flex-direction: column;
-        //margin: 1rem calc(2 * $baseSize);
+        margin-bottom: calc(5 * $baseSize);
         h2 {
             margin-top: calc(4 * $baseSize);
             margin-bottom: calc(1 * $baseSize);
@@ -232,6 +232,7 @@ body {
         }
     }
 }
+
 
 @media only screen and (min-width: 767px) {
     body {

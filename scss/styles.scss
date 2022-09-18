@@ -166,6 +166,8 @@ body {
       z-index: 20;
       position: sticky;
       top:0;
+      background: #000;
+      height: 65px;
       @extend .fila;
       a {
         @extend .fila;
@@ -178,7 +180,7 @@ body {
         @extend .fila;
         justify-content: space-around;
         position: sticky;
-        top:0;
+        top: 65px;
 
         margin-top: calc(1 * $baseSize);
         border-top: 3px solid #ccc;
@@ -211,14 +213,21 @@ body {
         grid-area: main;
         @extend .fila;
         flex-direction: column;
-        margin: 1rem calc(2 * $baseSize);
+        //margin: 1rem calc(2 * $baseSize);
         h2 {
-            font-size: calc(2 * $baseSize);
+            margin-top: calc(4 * $baseSize);
+            margin-bottom: calc(1 * $baseSize);
+            font-size: calc(1.5 * $baseSize);
             color: $verde;
         }
-        p {
+        h3 {
+            margin: calc(1 * $baseSize);
+            font-size: calc(0.8 * $baseSize);
             color: $verde;
-            width: 50%;
+        }
+        p, a {
+            color: $verde;
+            width: 90%;
             font-size: calc(0.5 * $baseSize);
         }
     }
@@ -288,6 +297,12 @@ body {
                     transition-delay: 2s;
                     transform: translateX(-50%) scale(2);
                 }
+            }
+        }
+        main {
+            p, a {
+                color: $verde;
+                width: 75%;
             }
         }
     }

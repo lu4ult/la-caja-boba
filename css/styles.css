@@ -99,13 +99,15 @@ body .cafe {
   z-index: 20;
   position: sticky;
   top: 0;
+  background: #000;
+  height: 65px;
 }
 body footer {
   grid-area: footer;
   z-index: 10;
   justify-content: space-around;
   position: sticky;
-  top: 0;
+  top: 65px;
   margin-top: calc(1 * (1rem + 1vw));
   border-top: 3px solid #ccc;
   border-bottom: 3px solid #ccc;
@@ -123,15 +125,21 @@ body footer div img {
 body main {
   grid-area: main;
   flex-direction: column;
-  margin: 1rem calc(2 * (1rem + 1vw));
 }
 body main h2 {
-  font-size: calc(2 * (1rem + 1vw));
+  margin-top: calc(4 * (1rem + 1vw));
+  margin-bottom: calc(1 * (1rem + 1vw));
+  font-size: calc(1.5 * (1rem + 1vw));
   color: #00FF41;
 }
-body main p {
+body main h3 {
+  margin: calc(1 * (1rem + 1vw));
+  font-size: calc(0.8 * (1rem + 1vw));
   color: #00FF41;
-  width: 50%;
+}
+body main p, body main a {
+  color: #00FF41;
+  width: 90%;
   font-size: calc(0.5 * (1rem + 1vw));
 }
 
@@ -175,5 +183,9 @@ body main p {
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(-50%) scale(2);
+  }
+  body main p, body main a {
+    color: #00FF41;
+    width: 75%;
   }
 }/*# sourceMappingURL=styles.css.map */

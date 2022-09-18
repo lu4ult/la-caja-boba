@@ -4,6 +4,7 @@ $debug-level:0;             //1: Agrega borde rojo (outline, no border para que 
 
 $baseSize: calc(1rem + 1vw);
 $verde: #00FF41;
+$verde-oscuro: #03A062;
 
 ::-webkit-scrollbar {
     background-color: #000;
@@ -299,6 +300,10 @@ body {
                     transform: translateX(-50%) scale(2);
                 }
             }
+        }
+
+        footer {
+            margin-top: calc(2 * $baseSize);
         }
         main {
             p, a {

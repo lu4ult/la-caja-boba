@@ -95,7 +95,7 @@ body .main-container iframe {
 }
 body .cafe {
   grid-area: cafecito;
-  margin-top: calc(1 * (1rem + 1vw));
+  margin-top: calc(2 * (1rem + 1vw));
   z-index: 20;
   position: sticky;
   top: 0;

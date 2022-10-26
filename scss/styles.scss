@@ -4,6 +4,7 @@ $debug-level:0;             //1: Agrega borde rojo (outline, no border para que 
 
 $baseSize: calc(1rem + 1vw);
 $verde: #00FF41;
+$verde-oscuro: #03A062;
 
 ::-webkit-scrollbar {
     background-color: #000;
@@ -67,9 +68,10 @@ body {
     grid-template-areas:
         "header"
         "dolar"
-        "main"
+        "contenedor"
         "cafecito"
-        "footer";
+        "footer"
+        "main";
 
     // grid-template-areas:
     //     "header"
@@ -83,10 +85,10 @@ body {
         @extend .fila;
 
         img {
-            width: 100px;
+            //width: 100px;
+            max-height: 75px;
             aspect-ratio: 1;
         }
-
     }
 
     .dolar-container {
@@ -127,7 +129,7 @@ body {
                 grid-area: compra;
                 justify-self: center;
                 font-size: calc(0.8* $baseSize);
-                margin: 2px 20px;
+                margin: 2px 16px;
             }
 
             .precio-dolar__valor-venta {
@@ -145,7 +147,7 @@ body {
     }
 
     .main-container {
-        grid-area: main;
+        grid-area: contenedor;
 
         display: grid;
         gap: 0;
@@ -161,7 +163,12 @@ body {
 
     .cafe {
       grid-area: cafecito;
-      margin-top: 1rem;
+      margin-top: calc(2 * $baseSize);
+      z-index: 20;
+      position: sticky;
+      top:0;
+      background: #000;
+      height: 65px;
       @extend .fila;
       a {
         @extend .fila;
@@ -170,11 +177,16 @@ body {
 
     footer {
         grid-area: footer;
+        z-index: 10;
         @extend .fila;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        position: sticky;
+        top: 65px;
 
-        margin-top: 0.5rem;
+        margin-top: calc(1 * $baseSize);
         border-top: 3px solid #ccc;
+        border-bottom: 3px solid #ccc;
+        background: #000;
         // min-height: 100px;
         // max-height: 150px;
 
@@ -192,12 +204,36 @@ body {
                 // height: 100%;
                 // max-height: 100px;
                 // width: auto;
-                width: 50px;
+                width: 45px;
                 aspect-ratio: 1;
             }
         }
     }
+
+    main {
+        grid-area: main;
+        @extend .fila;
+        flex-direction: column;
+        margin-bottom: calc(5 * $baseSize);
+        h2 {
+            margin-top: calc(4 * $baseSize);
+            margin-bottom: calc(1 * $baseSize);
+            font-size: calc(1.5 * $baseSize);
+            color: $verde;
+        }
+        h3 {
+            margin: calc(1 * $baseSize);
+            font-size: calc(0.8 * $baseSize);
+            color: $verde;
+        }
+        p, a {
+            color: $verde;
+            width: 90%;
+            font-size: calc(0.5 * $baseSize);
+        }
+    }
 }
+
 
 @media only screen and (min-width: 767px) {
     body {
@@ -233,10 +269,48 @@ body {
     body {
         .main-container {
             grid-template-columns: repeat(3, 1fr);
+
             iframe {
                 width: 100%;
                 aspect-ratio: 16/9;
+                transition: all .3s;
+            }
+
+            .left {
+                &:hover {
+                    transition: all .3s;
+                    transition-delay: 2s;
+                    transform: translateX(50%) scale(2);
+                }
+            }
+
+            .center {
+                &:hover {
+                    transition: all .3s;
+                    transition-delay: 2s;
+                    transform: translateX(0) scale(2);
+                }
+            }
+
+            .right {
+                &:hover {
+                    //position: relative;
+                    transition: all .3s;
+                    transition-delay: 2s;
+                    transform: translateX(-50%) scale(2);
+                }
+            }
+        }
+
+        footer {
+            margin-top: calc(2 * $baseSize);
+        }
+        main {
+            p, a {
+                color: $verde;
+                width: 75%;
             }
         }
     }
 }
+

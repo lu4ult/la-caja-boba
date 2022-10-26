@@ -21,7 +21,7 @@ a {
   color: #fff;
 }
 
-.fila, body footer div img, body footer div, body footer, body .cafe a, body .cafe, body .dolar-container, body header {
+.fila, body main, body footer div img, body footer div, body footer, body .cafe a, body .cafe, body .dolar-container, body header {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -32,13 +32,13 @@ a {
 body {
   display: grid;
   background: #000;
-  grid-template-areas: "header" "dolar" "main" "cafecito" "footer";
+  grid-template-areas: "header" "dolar" "contenedor" "cafecito" "footer" "main";
 }
 body header {
   grid-area: header;
 }
 body header img {
-  width: 100px;
+  max-height: 75px;
   aspect-ratio: 1;
 }
 body .dolar-container {
@@ -70,7 +70,7 @@ body .dolar-container .precio-dolar .precio-dolar__valor-compra {
   grid-area: compra;
   justify-self: center;
   font-size: calc(0.8 * (1rem + 1vw));
-  margin: 2px 20px;
+  margin: 2px 16px;
 }
 body .dolar-container .precio-dolar .precio-dolar__valor-venta {
   grid-area: venta;
@@ -82,7 +82,7 @@ body .dolar-container .precio-dolar span {
   font-family: "Roboto", sans-serif;
 }
 body .main-container {
-  grid-area: main;
+  grid-area: contenedor;
   display: grid;
   gap: 0;
   grid-template-columns: repeat(1, 1fr);
@@ -95,13 +95,23 @@ body .main-container iframe {
 }
 body .cafe {
   grid-area: cafecito;
-  margin-top: 1rem;
+  margin-top: calc(2 * (1rem + 1vw));
+  z-index: 20;
+  position: sticky;
+  top: 0;
+  background: #000;
+  height: 65px;
 }
 body footer {
   grid-area: footer;
-  justify-content: space-evenly;
-  margin-top: 0.5rem;
+  z-index: 10;
+  justify-content: space-around;
+  position: sticky;
+  top: 65px;
+  margin-top: calc(1 * (1rem + 1vw));
   border-top: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  background: #000;
 }
 body footer #github-logo {
   border: 2px solid #fff;
@@ -109,8 +119,29 @@ body footer #github-logo {
   border-radius: 50%;
 }
 body footer div img {
-  width: 50px;
+  width: 45px;
   aspect-ratio: 1;
+}
+body main {
+  grid-area: main;
+  flex-direction: column;
+  margin-bottom: calc(5 * (1rem + 1vw));
+}
+body main h2 {
+  margin-top: calc(4 * (1rem + 1vw));
+  margin-bottom: calc(1 * (1rem + 1vw));
+  font-size: calc(1.5 * (1rem + 1vw));
+  color: #00FF41;
+}
+body main h3 {
+  margin: calc(1 * (1rem + 1vw));
+  font-size: calc(0.8 * (1rem + 1vw));
+  color: #00FF41;
+}
+body main p, body main a {
+  color: #00FF41;
+  width: 90%;
+  font-size: calc(0.5 * (1rem + 1vw));
 }
 
 @media only screen and (min-width: 767px) {
@@ -137,5 +168,28 @@ body footer div img {
   body .main-container iframe {
     width: 100%;
     aspect-ratio: 16/9;
+    transition: all 0.3s;
+  }
+  body .main-container .left:hover {
+    transition: all 0.3s;
+    transition-delay: 2s;
+    transform: translateX(50%) scale(2);
+  }
+  body .main-container .center:hover {
+    transition: all 0.3s;
+    transition-delay: 2s;
+    transform: translateX(0) scale(2);
+  }
+  body .main-container .right:hover {
+    transition: all 0.3s;
+    transition-delay: 2s;
+    transform: translateX(-50%) scale(2);
+  }
+  body footer {
+    margin-top: calc(2 * (1rem + 1vw));
+  }
+  body main p, body main a {
+    color: #00FF41;
+    width: 75%;
   }
 }/*# sourceMappingURL=styles.css.map */

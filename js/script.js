@@ -1,4 +1,4 @@
-if(localStorage.getItem("la-caja-boba-encuesta_no-mostrar") != "true") {
+if(localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
     Swal.fire({
         title: '¿Nos ayudarías contestando una breve encuesta sobre esta herramienta?',
         showDenyButton: true,
@@ -11,7 +11,7 @@ if(localStorage.getItem("la-caja-boba-encuesta_no-mostrar") != "true") {
         if (result.isConfirmed) {
             window.open("https://forms.gle/3KWjrWKT4mLr73L27", '_blank').focus();
         } else if (result.isDenied) {
-          localStorage.setItem("la-caja-boba-encuesta_no-mostrar",true)
+          localStorage.setItem("la-caja-boba-encuesta_no-mostrar",JSON.stringify(new Date()))
         }
       });
 }

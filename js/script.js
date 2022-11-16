@@ -15,3 +15,72 @@ if(localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
         }
       });
 }
+
+console.clear();
+
+let monitor1 = document.getElementById("monitor1");
+
+let dragable = document.getElementById("dragable");
+dragable.addEventListener("dragstart", e=> {
+  console.log("drag start")
+});
+
+dragable.addEventListener("dragend", e=> {
+  console.log("drag end")
+});
+
+dragable.addEventListener("drag", e=> {
+ //console.log("drag");
+  //console.log(e)
+});
+
+let soltable = document.getElementById("drop");
+soltable.addEventListener("dragenter", (e) => {
+  console.log("drag enter")
+
+});
+
+soltable.addEventListener("dragleave", (e) => {
+  console.log("drag leave")
+
+});
+
+soltable.addEventListener("dragover", (e) => {
+  //console.log("drag over")
+  e.preventDefault();
+
+});
+
+soltable.addEventListener("drop", (e) => {
+  console.log("drag drop");
+  soltable.appendChild(dragable);
+  soltable.appendChild(monitor1);
+
+  //necesita el preventDefault
+
+});
+
+
+/*
+async function buscar() {
+  return await fetch('https://www.youtube.com/results?search_query=c5n+en+vivo');
+}
+
+function mostrarResultado (data) {
+  console.log(data);
+}
+
+let buscar().then(mostrarResultado);
+*/
+
+function buscar() {
+  fetch('https://www.youtube.com/results?search_query=a24+en+vivo',{
+    method: "GET",
+    headers: {"Content-type":"text/html"}
+  })
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+}
+
+buscar();
+

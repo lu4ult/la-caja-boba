@@ -32,7 +32,7 @@ a {
 body {
   display: grid;
   background: #000;
-  grid-template-areas: "header" "dolar" "contenedor" "cafecito" "footer" "main";
+  grid-template-areas: "header" "dolar" "dragable" "drop" "contenedor" "cafecito" "footer" "main";
 }
 body header {
   grid-area: header;
@@ -80,6 +80,21 @@ body .dolar-container .precio-dolar .precio-dolar__valor-venta {
 body .dolar-container .precio-dolar span {
   color: #fff;
   font-family: "Roboto", sans-serif;
+}
+body .dragable {
+  grid-area: dragable;
+  color: white;
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 100px;
+  margin: 1rem;
+}
+body .drop {
+  grid-area: drop;
+  border: 1px solid white;
+  color: white;
+  width: 300px;
+  height: 300px;
 }
 body .main-container {
   grid-area: contenedor;

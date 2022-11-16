@@ -68,6 +68,8 @@ body {
     grid-template-areas:
         "header"
         "dolar"
+        "dragable"
+        "drop"
         "contenedor"
         "cafecito"
         "footer"
@@ -144,6 +146,24 @@ body {
             }
         }
 
+    }
+
+    .dragable {
+        grid-area: dragable;
+        color: white;
+        border: 1px solid #ccc;
+        width: 200px;
+        height: 100px;
+        margin: 1rem;
+
+    }
+
+    .drop {
+        grid-area: drop;
+        border: 1px solid white;
+        color: white;
+        width: 300px;
+        height: 300px;
     }
 
     .main-container {

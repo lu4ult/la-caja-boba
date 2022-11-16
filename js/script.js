@@ -73,14 +73,15 @@ function mostrarResultado (data) {
 let buscar().then(mostrarResultado);
 */
 
-function buscar() {
-  fetch('https://www.youtube.com/results?search_query=a24+en+vivo',{
-    method: "GET",
-    headers: {"Content-type":"text/html"}
-  })
-    .then(res => console.log(res))
+function buscar(buscado) {
+  fetch('https://www.googleapis.com/youtube/v3/search?key=AIzaSyAD6_lw_djitCmUxEI8WyNyjvonlUTT57E&q='+buscado+' en vivo')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      console.log(data['items'][0]['id']['videoId']);
+    })
     .catch(err => console.log(err))
 }
 
-buscar();
+buscar("c5n");
 

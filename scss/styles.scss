@@ -68,8 +68,8 @@ body {
     grid-template-areas:
         "header"
         "dolar"
-        "dragable"
-        "drop"
+        "contenedor2"
+        "soltable"
         "contenedor"
         "cafecito"
         "footer"
@@ -148,24 +148,24 @@ body {
 
     }
 
-    .dragable {
-        grid-area: dragable;
-        color: white;
-        border: 1px solid #ccc;
-        width: 200px;
-        height: 100px;
-        margin: 1rem;
-
+    .main-container-2 {
+        grid-area: contenedor2;
+        background-color: red;
     }
 
-    .drop {
-        grid-area: drop;
-        border: 1px solid white;
-        color: white;
-        width: 300px;
-        height: 300px;
+    .soltable {
+        grid-area: soltable;
+
+        width: 800px;
+        height: 200px;
+        background-color: #ccc;
+
+        &.if-hover {
+            background-color: yellow;
+        }
     }
 
+ 
     .main-container {
         grid-area: contenedor;
 

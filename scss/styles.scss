@@ -48,12 +48,6 @@ a {
     color: #fff;
 }
 
-
-// img {
-//     width: $baseSize;
-//     height: $baseSize;
-// }
-
 .fila {
     display: flex;
     flex-direction: row;
@@ -73,13 +67,6 @@ body {
         "cafecito"
         "footer"
         "main";
-
-    // grid-template-areas:
-    //     "header"
-    //     "cafecito"
-    //     "dolar"
-    //     "main"
-    //     "footer";
 
     header {
         grid-area: header;
@@ -155,14 +142,16 @@ body {
         grid-template-columns: repeat(1, 1fr);
         align-items: center;
         div {
+            .svg-container {
+                display: none;
+                //z-index: -100;
+               }
+
             iframe {
                 justify-self: center;
                 width: 100%;
                 aspect-ratio: 16/9;
             }
-           .svg-container {
-            display: none;
-           }
         }
     }
 
@@ -236,8 +225,6 @@ body {
             width: 90%;
             font-size: calc(0.5 * $baseSize);
         }
-        //TODO: REACTIVAR
-        display: none;
     }
 }
 
@@ -261,23 +248,23 @@ body {
             margin: 1rem auto;
             font-size: 1rem;
             text-align: center;
-    
+
             width: 400px;
             min-height: 100px;
             //border: 3px solid #666;
             background-color: #ccc;
             transition: all 1s;
-    
+
             &.dragHover {
                 background-color: yellow;
             }
-    
+
             &.dragDropped {
                 //background-color: cyan;
                 width: 90%;
-    
+
             }
-    
+
             iframe {
                 width: 100%;
                 aspect-ratio: 16/9;
@@ -296,21 +283,24 @@ body {
                         right: 20px;
                         top: 100px;
                         width: 50px;
-                        height: 100px;
+                        height: 50px;
                         fill: rgba(68,68,68,0.2);
                         cursor: pointer;
-                        &:hover {
-                            fill: green;
-                        }
                     }
-
                 }
-
                 iframe {
                     width: 100%;
                     aspect-ratio: 16/9;
                     transition: all .3s;
                 }
+                &:hover {
+                     .svg-container {
+                        svg {
+                           fill: green;
+                        }
+                    }
+                }
+            }
         }
 
         footer {
@@ -327,7 +317,6 @@ body {
     body {
         .main-container {
             grid-template-columns: repeat(3, 1fr);
-            }
 
             //TODO: volver a poner estas clases
             .left {
@@ -367,4 +356,3 @@ body {
         }
     }
 }
-

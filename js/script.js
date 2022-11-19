@@ -1,24 +1,30 @@
-if(localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
-    Swal.fire({
-        title: '¿Nos ayudarías contestando una breve encuesta sobre esta herramienta?',
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: 'Si! Vamos a la encuesta!',
-        denyButtonText: `No volver a mostrar`,
-        cancelButtonText: 'Quizás en un futuro...',
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            window.open("https://forms.gle/3KWjrWKT4mLr73L27", '_blank').focus();
-        } else if (result.isDenied) {
-          localStorage.setItem("la-caja-boba-encuesta_no-mostrar",JSON.stringify(new Date()))
-        }
-      });
-}
-
-
 let streamsUrls = [];
 let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+"];
+
+let produccion = "https://fastidious-fairy-1f357e.netlify.app/" === window.location.href || "https://animated-biscochitos-fe56b0.netlify.app/" === window.location.href;
+console.log("Produccion: " + produccion);
+
+/*************************************************************************************************/
+
+if(localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
+  Swal.fire({
+      title: '¿Nos ayudarías contestando una breve encuesta sobre esta herramienta?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Si! Vamos a la encuesta!',
+      denyButtonText: `No volver a mostrar`,
+      cancelButtonText: 'Quizás en un futuro...',
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+          window.open("https://forms.gle/3KWjrWKT4mLr73L27", '_blank').focus();
+      } else if (result.isDenied) {
+        localStorage.setItem("la-caja-boba-encuesta_no-mostrar",JSON.stringify(new Date()))
+      }
+    });
+}
+
+/*************************************************************************************************/
 
 
 async function buscar(buscado) {
@@ -45,6 +51,8 @@ async function buscar(buscado) {
 }
 
 
+
+
 // buscar("c5n").then(rtta => {
 //   console.log("a24: " + rtta)
 //   document.getElementById("iframe1").src = "https://youtube.com/embed/"+ rtta;
@@ -64,17 +72,22 @@ async function buscar(buscado) {
 //   document.getElementById("iframe4").src = "https://youtube.com/embed/"+ rtta;
 // });
 
-// buscar("camara senadores").then(rtta => {
-//   document.getElementById("iframe5").src = "https://youtube.com/embed/"+ rtta;
-// });
+if(produccion) {
+  buscar("camara senadores").then(rtta => {
+    document.getElementById("iframe5").src = "https://youtube.com/embed/"+ rtta;
+  });
+}
+
 
 // buscar("ln+").then(rtta => {
 //   document.getElementById("iframe6").src = "https://youtube.com/embed/"+ rtta;
 // });
 
+/*************************************************************************************************/
 
-
-
+if(produccion) {
+  getDolar().then(updateValues);
+}
 
 /*************************************************************************************************/
 
@@ -126,5 +139,7 @@ tvGrande.addEventListener("drop", (e) => {
   document.getElementById("tvGrande").appendChild(elementoMover);
   //document.getElementById(idIframe+"Container").appendChild("div");
   document.getElementById("main-container").removeChild(elementoMover);
-
 });
+
+
+//TODO: function rearmarGrid

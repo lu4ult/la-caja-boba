@@ -88,13 +88,13 @@ body .main-container {
   grid-template-columns: repeat(1, 1fr);
   align-items: center;
 }
+body .main-container div .svg-container {
+  display: none;
+}
 body .main-container div iframe {
   justify-self: center;
   width: 100%;
   aspect-ratio: 16/9;
-}
-body .main-container div .svg-container {
-  display: none;
 }
 body .cafe {
   grid-area: cafecito;
@@ -129,7 +129,6 @@ body main {
   grid-area: main;
   flex-direction: column;
   margin-bottom: calc(5 * (1rem + 1vw));
-  display: none;
 }
 body main h2 {
   margin-top: calc(4 * (1rem + 1vw));
@@ -189,45 +188,45 @@ body main p, body main a {
     right: 20px;
     top: 100px;
     width: 50px;
-    height: 100px;
+    height: 50px;
     fill: rgba(68, 68, 68, 0.2);
     cursor: pointer;
-  }
-  body .main-container div .svg-container svg:hover {
-    fill: green;
   }
   body .main-container div iframe {
     width: 100%;
     aspect-ratio: 16/9;
     transition: all 0.3s;
   }
-  body .main-container footer div img {
+  body .main-container div:hover .svg-container svg {
+    fill: green;
+  }
+  body footer div img {
     width: 75px;
   }
 }
-@media only screen and (min-width: 767px) and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
   body .main-container {
     grid-template-columns: repeat(3, 1fr);
   }
-  body .left:hover {
+  body .main-container .left:hover {
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(50%) scale(2);
   }
-  body .center:hover {
+  body .main-container .center:hover {
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(0) scale(2);
   }
-  body .right:hover {
+  body .main-container .right:hover {
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(-50%) scale(2);
   }
-  footer {
+  body footer {
     margin-top: calc(2 * (1rem + 1vw));
   }
-  main p, main a {
+  body main p, body main a {
     color: #00FF41;
     width: 75%;
   }

@@ -127,7 +127,6 @@ body footer div img {
 body main {
   grid-area: main;
   flex-direction: column;
-  margin-bottom: calc(5 * (1rem + 1vw));
 }
 body main h2 {
   margin-top: calc(4 * (1rem + 1vw));
@@ -168,10 +167,11 @@ body main p, body main a {
     transition: all 1s;
   }
   body .tvGrande.dragDropped {
-    width: 90%;
+    width: 80%;
     border: none;
     background: none;
     padding: 0;
+    aspect-ratio: 16/9;
   }
   body .tvGrande.dragHover {
     background-color: blueviolet;

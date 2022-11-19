@@ -84,13 +84,11 @@ body {
         grid-area: dolar;
         @extend .fila;
         justify-content: space-around;
-        //margin-bottom: 1rem;
 
         .precio-dolar {
             display: grid;
             border: 3px solid #00FF41;
 
-            //margin-bottom: 10px;
             border-radius: 25px;
             box-shadow: 0 0 15px 5px rgba(0,255,0,0.7);
             transition: all .5s;
@@ -209,7 +207,6 @@ body {
         grid-area: main;
         @extend .fila;
         flex-direction: column;
-        margin-bottom: calc(5 * $baseSize);
         h2 {
             margin-top: calc(4 * $baseSize);
             margin-bottom: calc(1 * $baseSize);
@@ -261,10 +258,11 @@ body {
 
             &.dragDropped {
                 //background-color: cyan;
-                width: 90%;
+                width: 80%;
                 border: none;
                 background: none;
                 padding: 0;
+                aspect-ratio: 16/9;
             }
 
             &.dragHover {

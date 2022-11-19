@@ -59,6 +59,7 @@ a {
 body {
     display: grid;
     background: #000;
+    //grid-template-rows: 2vh 2vh auto auto auto auto auto;
     grid-template-areas:
         "header"
         "dolar"
@@ -83,7 +84,7 @@ body {
         grid-area: dolar;
         @extend .fila;
         justify-content: space-around;
-        margin-bottom: 1rem;
+        //margin-bottom: 1rem;
 
         .precio-dolar {
             display: grid;
@@ -110,20 +111,20 @@ body {
             .precio-dolar__titulo {
                 grid-area: titulo;
                 justify-self: center;
-                font-size: calc(1.1* $baseSize);
+                font-size: calc(0.9* $baseSize);
             }
 
             .precio-dolar__valor-compra {
                 grid-area: compra;
                 justify-self: center;
-                font-size: calc(0.8* $baseSize);
+                font-size: calc(0.6* $baseSize);
                 margin: 2px 16px;
             }
 
             .precio-dolar__valor-venta {
                 grid-area: venta;
                 justify-self: center;
-                font-size: calc(0.8* $baseSize);
+                font-size: calc(0.6* $baseSize);
             }
 
             span {
@@ -233,7 +234,7 @@ body {
     body {
         .dolar-container {
             .precio-dolar {
-                width: 30%;
+                width: 25%;
                 grid-template-columns: 1fr 1fr;
                 grid-template-areas:
                 "titulo titulo"
@@ -247,7 +248,7 @@ body {
             display: block;
             width: 200px;
             aspect-ratio: 4/3;
-            margin: 0.5rem auto;
+            margin: 0 auto;
             padding: 0.5rem;
             font-size: 0.75rem;
             color: #eee;

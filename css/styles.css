@@ -44,7 +44,6 @@ body header img {
 body .dolar-container {
   grid-area: dolar;
   justify-content: space-around;
-  margin-bottom: 1rem;
 }
 body .dolar-container .precio-dolar {
   display: grid;
@@ -64,18 +63,18 @@ body .dolar-container .precio-dolar:hover {
 body .dolar-container .precio-dolar .precio-dolar__titulo {
   grid-area: titulo;
   justify-self: center;
-  font-size: calc(1.1 * (1rem + 1vw));
+  font-size: calc(0.9 * (1rem + 1vw));
 }
 body .dolar-container .precio-dolar .precio-dolar__valor-compra {
   grid-area: compra;
   justify-self: center;
-  font-size: calc(0.8 * (1rem + 1vw));
+  font-size: calc(0.6 * (1rem + 1vw));
   margin: 2px 16px;
 }
 body .dolar-container .precio-dolar .precio-dolar__valor-venta {
   grid-area: venta;
   justify-self: center;
-  font-size: calc(0.8 * (1rem + 1vw));
+  font-size: calc(0.6 * (1rem + 1vw));
 }
 body .dolar-container .precio-dolar span {
   color: #fff;
@@ -149,7 +148,7 @@ body main p, body main a {
 
 @media only screen and (min-width: 767px) {
   body .dolar-container .precio-dolar {
-    width: 30%;
+    width: 25%;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "titulo titulo" "compra venta";
   }
@@ -158,7 +157,7 @@ body main p, body main a {
     display: block;
     width: 200px;
     aspect-ratio: 4/3;
-    margin: 0.5rem auto;
+    margin: 0 auto;
     padding: 0.5rem;
     font-size: 0.75rem;
     color: #eee;

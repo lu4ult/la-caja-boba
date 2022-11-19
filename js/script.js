@@ -183,14 +183,7 @@ tvGrande.addEventListener("drop", (e) => {
 
   contenedorAEliminar.innerHTML = "";       //Eliminamos todo el contenido directamente.
   tvGrandeActivo = true;                    //Para las clases de Tv grande
-  
+
+  tvGrande.scrollIntoView(top);
+
 });
-
-// if(!primerCarga) {
-//   primerCarga = true
-//   reconstruirGrid();
-
-// }
-
-
-

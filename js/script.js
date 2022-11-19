@@ -1,5 +1,6 @@
-let streamsUrls = [];
+let streamsUrls = ["",""];
 let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+"];
+let tvGrandeActivo = false;
 
 let produccion = "https://fastidious-fairy-1f357e.netlify.app/" === window.location.href || "https://animated-biscochitos-fe56b0.netlify.app/" === window.location.href;
 console.log("Produccion: " + produccion);
@@ -103,6 +104,13 @@ monitores = document.querySelectorAll(".svg-container");
 monitores.forEach(e => {
   e.addEventListener("dragstart", f => {
     f.dataTransfer.setData("id",f.target.id);
+    //console.log(f.target.id)
+    if(tvGrandeActivo === true) {                           //Si se empieza a desplazar una pantallita pero el tv grande está en uso limpiamos todo
+      //reconstruirGrid();
+      document.getElementById("tvGrande").innerHTML = "";
+      //document.getElementById("tvGrande").classList.remove("dragDropped");
+      document.getElementById("tvGrande").classList.add("dragHover");
+    }
   });
 });
 
@@ -129,17 +137,31 @@ tvGrande.addEventListener("drop", (e) => {
 
   let idRecibido = e.dataTransfer.getData("id");
   let idIframe = idRecibido.replace("monitor","iframe");
+  let idContainer = idIframe + "Container";
 
-  console.log("ID SVG: " + idRecibido);
+  //console.log("ID SVG: " + idRecibido);
   console.log("ID Ifr: " + idIframe);
+  console.log("ID Tod: " + idContainer);
 
-  let elementoMover = document.getElementById(idIframe);
+  let iframeAMover = document.getElementById(idIframe);
+  let contenedorAEliminar = document.getElementById(idContainer);
 
   document.getElementById("tvGrande").innerHTML = "";                 //Para limpiear el mensaje al inicio.
-  document.getElementById("tvGrande").appendChild(elementoMover);
-  //document.getElementById(idIframe+"Container").appendChild("div");
-  document.getElementById("main-container").removeChild(elementoMover);
+  document.getElementById("tvGrande").appendChild(iframeAMover);
+
+  contenedorAEliminar.innerHTML = "";       //Eliminamos todo el contenido directamente.
+  // contenedorAEliminar.innerHTML = ` <div class="reconstruirGrid">
+  //                                     <button onclick="reconstruirGrid();">
+  //                                       <p>svg</p>
+  //                                     </button>
+  //                                   </div>`;
+
+  tvGrandeActivo = true;
 });
 
 
+
+function reconstruirGrid() {
+  alert("hola")
+}
 //TODO: function rearmarGrid

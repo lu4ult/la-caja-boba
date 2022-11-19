@@ -32,7 +32,7 @@ a {
 body {
   display: grid;
   background: #000;
-  grid-template-areas: "header" "dolar" "contenedor2" "soltable" "contenedor" "cafecito" "footer" "main";
+  grid-template-areas: "header" "dolar" "tvGrande" "contenedor" "cafecito" "footer" "main";
 }
 body header {
   grid-area: header;
@@ -81,18 +81,25 @@ body .dolar-container .precio-dolar span {
   color: #fff;
   font-family: "Roboto", sans-serif;
 }
-body .main-container-2 {
-  grid-area: contenedor2;
-  background-color: red;
-}
-body .soltable {
-  grid-area: soltable;
-  width: 800px;
-  height: 200px;
+body .tvGrande {
+  grid-area: tvGrande;
+  display: block;
+  margin: 1rem auto;
+  font-size: 1rem;
+  text-align: center;
+  width: 400px;
+  min-height: 100px;
   background-color: #ccc;
 }
-body .soltable.if-hover {
+body .tvGrande.dragHover {
   background-color: yellow;
+}
+body .tvGrande.dragDropped {
+  width: 90%;
+}
+body .tvGrande iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
 }
 body .main-container {
   grid-area: contenedor;
@@ -101,10 +108,14 @@ body .main-container {
   grid-template-columns: repeat(1, 1fr);
   align-items: center;
 }
-body .main-container iframe {
+body .main-container div iframe {
+  z-index: -10;
   justify-self: center;
-  width: 80%;
+  width: 100%;
   aspect-ratio: 16/9;
+}
+body .main-container div .svg-container {
+  display: none;
 }
 body .cafe {
   grid-area: cafecito;
@@ -139,6 +150,7 @@ body main {
   grid-area: main;
   flex-direction: column;
   margin-bottom: calc(5 * (1rem + 1vw));
+  display: none;
 }
 body main h2 {
   margin-top: calc(4 * (1rem + 1vw));
@@ -178,7 +190,25 @@ body main p, body main a {
   body .main-container {
     grid-template-columns: repeat(3, 1fr);
   }
-  body .main-container iframe {
+  body .main-container div {
+    position: relative;
+  }
+  body .main-container div .svg-container {
+    display: block;
+  }
+  body .main-container div .svg-container svg {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    width: 50px;
+    height: 100px;
+    fill: rgba(68, 68, 68, 0.2);
+    cursor: pointer;
+  }
+  body .main-container div .svg-container svg:hover {
+    fill: green;
+  }
+  body .main-container div iframe {
     width: 100%;
     aspect-ratio: 16/9;
     transition: all 0.3s;

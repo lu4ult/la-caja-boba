@@ -1,5 +1,3 @@
-
-
 if(localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
     Swal.fire({
         title: '¿Nos ayudarías contestando una breve encuesta sobre esta herramienta?',
@@ -47,32 +45,32 @@ async function buscar(buscado) {
 }
 
 
-buscar("c5n").then(rtta => {
-  console.log("a24: " + rtta)
-  document.getElementById("iframe1").src = "https://youtube.com/embed/"+ rtta;
-});
+// buscar("c5n").then(rtta => {
+//   console.log("a24: " + rtta)
+//   document.getElementById("iframe1").src = "https://youtube.com/embed/"+ rtta;
+// });
 
-buscar("a24").then(rtta => {
-  console.log("a24: " + rtta)
-  document.getElementById("iframe2").src = "https://youtube.com/embed/"+ rtta;
-});
+// buscar("a24").then(rtta => {
+//   console.log("a24: " + rtta)
+//   document.getElementById("iframe2").src = "https://youtube.com/embed/"+ rtta;
+// });
 
-buscar("tn").then(rtta => {
-  console.log("tn: " + rtta)
-  document.getElementById("iframe3").src = "https://youtube.com/embed/"+ rtta;
-});
+// buscar("tn").then(rtta => {
+//   console.log("tn: " + rtta)
+//   document.getElementById("iframe3").src = "https://youtube.com/embed/"+ rtta;
+// });
 
-buscar("diputados tv").then(rtta => {
-  document.getElementById("iframe4").src = "https://youtube.com/embed/"+ rtta;
-});
+// buscar("diputados tv").then(rtta => {
+//   document.getElementById("iframe4").src = "https://youtube.com/embed/"+ rtta;
+// });
 
-buscar("camara senadores").then(rtta => {
-  document.getElementById("iframe5").src = "https://youtube.com/embed/"+ rtta;
-});
+// buscar("camara senadores").then(rtta => {
+//   document.getElementById("iframe5").src = "https://youtube.com/embed/"+ rtta;
+// });
 
-buscar("ln+").then(rtta => {
-  document.getElementById("iframe6").src = "https://youtube.com/embed/"+ rtta;
-});
+// buscar("ln+").then(rtta => {
+//   document.getElementById("iframe6").src = "https://youtube.com/embed/"+ rtta;
+// });
 
 
 
@@ -80,77 +78,20 @@ buscar("ln+").then(rtta => {
 
 /*************************************************************************************************/
 
-/*
-console.clear();
-
-//let monitor1 = document.getElementById("monitor1");
-
-//let dragable = document.getElementById("dragable");
-dragable.addEventListener("dragstart", e=> {
-  console.log("drag start")
-});
-
-dragable.addEventListener("dragend", e=> {
-  console.log("drag end")
-});
-
-dragable.addEventListener("drag", e=> {
- //console.log("drag");
-  //console.log(e)
-});
-
-//let soltable = document.getElementById("drop");
-soltable.addEventListener("dragenter", (e) => {
-  console.log("drag enter")
-
-});
-
-soltable.addEventListener("dragleave", (e) => {
-  console.log("drag leave")
-
-});
-
-soltable.addEventListener("dragover", (e) => {
-  //console.log("drag over")
-  e.preventDefault();
-
-});
-
-soltable.addEventListener("drop", (e) => {
-  console.log("drag drop");
-  soltable.appendChild(dragable);
-  soltable.appendChild(monitor1);
-
-  //necesita el preventDefault
-
-});
-*/
-
-let iframedragable = document.getElementById("iframedragable");
-//iframedragable.dataset.id = 2;
-
-iframedragable.addEventListener("dragstart", e=> {
-  console.log("drag start");
-  e.dataTransfer.setData("id",e.target.id);
-  console.log("enviando: " + e.target.id);
-});
-
-let iframedragable2 = document.getElementById("iframedragable2");
-//iframedragable.dataset.id = 2;
-
-iframedragable2.addEventListener("dragstart", e=> {
-  console.log("drag 2 start");
-  e.dataTransfer.setData("id",e.target.id);
-  console.log("enviando 2: " + e.target.id);
-});
-
-
-//let dragable = document.getElementById("dragable");
-// iframedragable.addEventListener("dragstart", e=> {
-//   console.log("drag start": e)
+// let monitor1 = document.getElementById("monitor1");
+// monitor1.addEventListener("dragstart", e => {
+//   e.dataTransfer.setData("id",e.target.id);
+//  console.log("enviando: " + e.target.id);
 // });
 
-//console.log("data: " + iframedragable.dataset.id)
+let monitores = [];
+monitores = document.querySelectorAll(".svg-container");
+//console.log(...monitores);
+monitores.forEach(e => {
+  e.addEventListener("dragstart", f => {
+    f.dataTransfer.setData("id",f.target.id);
+  });
+});
 
 let tvGrande = document.getElementById("tvGrande");
 tvGrande.addEventListener("dragenter", (e) => {
@@ -159,52 +100,31 @@ tvGrande.addEventListener("dragenter", (e) => {
 
 tvGrande.addEventListener("dragover", (e) => {
   e.preventDefault();
-  e.target.classList.add("if-hover");
+  e.target.classList.add("dragHover");
 });
 
 tvGrande.addEventListener("dragleave", (e) => {
-  console.log("drag leave")
-  e.target.classList.remove("if-hover");
+  console.log("drag leave");
+  e.target.classList.remove("dragHover");
 
 });
 
 tvGrande.addEventListener("drop", (e) => {
-  console.log("drag drop");
-  e.target.classList.remove("if-hover");
-
-  //soltable.appendChild(dragable);
-  //soltable.appendChild(monitor1);
-
-  //necesita el preventDefault
-  let data = e.target.dataset.id;
-  console.log("data: " + data);
+  e.target.classList.remove("dragHover");
+  e.target.classList.add("dragDropped");
 
 
-  let recibido = e.dataTransfer.getData("id");
-  console.log("rec: " + recibido);
+  let idRecibido = e.dataTransfer.getData("id");
+  let idIframe = idRecibido.replace("monitor","iframe");
 
-  let elementoAMover = document.getElementById(recibido);
-  tvGrande.appendChild(elementoAMover);
-  document.getElementById("main-container-2").removeChild(elementoAMover)
-  
-  //document.getElementById("")
+  console.log("ID SVG: " + idRecibido);
+  console.log("ID Ifr: " + idIframe);
 
+  let elementoMover = document.getElementById(idIframe);
 
-
-
+  document.getElementById("tvGrande").innerHTML = "";                 //Para limpiear el mensaje al inicio.
+  document.getElementById("tvGrande").appendChild(elementoMover);
+  //document.getElementById(idIframe+"Container").appendChild("div");
+  document.getElementById("main-container").removeChild(elementoMover);
 
 });
-
-
-
-/*
-async function buscar() {
-  return await fetch('https://www.youtube.com/results?search_query=c5n+en+vivo');
-}
-
-function mostrarResultado (data) {
-  console.log(data);
-}
-
-let buscar().then(mostrarResultado);
-*/

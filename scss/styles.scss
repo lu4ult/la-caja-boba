@@ -68,8 +68,7 @@ body {
     grid-template-areas:
         "header"
         "dolar"
-        "contenedor2"
-        "soltable"
+        "tvGrande"
         "contenedor"
         "cafecito"
         "footer"
@@ -148,24 +147,35 @@ body {
 
     }
 
-    .main-container-2 {
-        grid-area: contenedor2;
-        background-color: red;
-    }
+    .tvGrande {
+        grid-area: tvGrande;
+        display: block;
+        margin: 1rem auto;
+        font-size: 1rem;
+        text-align: center;
 
-    .soltable {
-        grid-area: soltable;
-
-        width: 800px;
-        height: 200px;
+        width: 400px;
+        min-height: 100px;
+        //border: 3px solid #666;
         background-color: #ccc;
 
-        &.if-hover {
+        &.dragHover {
             background-color: yellow;
+        }
+
+        &.dragDropped {
+            //background-color: cyan;
+            width: 90%;
+
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
         }
     }
 
- 
+
     .main-container {
         grid-area: contenedor;
 
@@ -173,11 +183,16 @@ body {
         gap: 0;
         grid-template-columns: repeat(1, 1fr);
         align-items: center;
-        iframe {
-            // border: 5px solid green;
-            justify-self: center;
-            width: 80%;
-            aspect-ratio: 16/9;
+        div {
+            iframe {
+                z-index: -10;
+                justify-self: center;
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+           .svg-container {
+            display: none;
+           }
         }
     }
 
@@ -251,6 +266,7 @@ body {
             width: 90%;
             font-size: calc(0.5 * $baseSize);
         }
+        display: none;
     }
 }
 
@@ -290,10 +306,31 @@ body {
         .main-container {
             grid-template-columns: repeat(3, 1fr);
 
-            iframe {
-                width: 100%;
-                aspect-ratio: 16/9;
-                transition: all .3s;
+            div {
+                position: relative;
+                //background-color: #ccc;
+                .svg-container {
+                    display: block;
+                    svg {
+                        position: absolute;
+                        right: 20px;
+                        top: 100px;
+                        width: 50px;
+                        height: 100px;
+                        fill: rgba(68,68,68,0.2);
+                        cursor: pointer;
+                        &:hover {
+                            fill: green;
+                        }
+                    }
+
+                }
+
+                iframe {
+                    width: 100%;
+                    aspect-ratio: 16/9;
+                    transition: all .3s;
+                }
             }
 
             .left {

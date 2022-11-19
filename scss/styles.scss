@@ -147,35 +147,6 @@ body {
 
     }
 
-    .tvGrande {
-        grid-area: tvGrande;
-        display: block;
-        margin: 1rem auto;
-        font-size: 1rem;
-        text-align: center;
-
-        width: 400px;
-        min-height: 100px;
-        //border: 3px solid #666;
-        background-color: #ccc;
-
-        &.dragHover {
-            background-color: yellow;
-        }
-
-        &.dragDropped {
-            //background-color: cyan;
-            width: 90%;
-
-        }
-
-        iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-        }
-    }
-
-
     .main-container {
         grid-area: contenedor;
 
@@ -185,7 +156,6 @@ body {
         align-items: center;
         div {
             iframe {
-                z-index: -10;
                 justify-self: center;
                 width: 100%;
                 aspect-ratio: 16/9;
@@ -266,6 +236,7 @@ body {
             width: 90%;
             font-size: calc(0.5 * $baseSize);
         }
+        //TODO: REACTIVAR
         display: none;
     }
 }
@@ -283,29 +254,38 @@ body {
             }
         }
 
-        .main-container {
-            grid-template-columns: repeat(2, 1fr);
+        .tvGrande {
+            grid-area: tvGrande;
+
+            display: block;
+            margin: 1rem auto;
+            font-size: 1rem;
+            text-align: center;
+    
+            width: 400px;
+            min-height: 100px;
+            //border: 3px solid #666;
+            background-color: #ccc;
+            transition: all 1s;
+    
+            &.dragHover {
+                background-color: yellow;
+            }
+    
+            &.dragDropped {
+                //background-color: cyan;
+                width: 90%;
+    
+            }
+    
             iframe {
                 width: 100%;
                 aspect-ratio: 16/9;
             }
         }
 
-        footer {
-            div {
-                img {
-                    width: 75px;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    body {
         .main-container {
-            grid-template-columns: repeat(3, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             div {
                 position: relative;
                 //background-color: #ccc;
@@ -331,8 +311,25 @@ body {
                     aspect-ratio: 16/9;
                     transition: all .3s;
                 }
+        }
+
+        footer {
+            div {
+                img {
+                    width: 75px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        .main-container {
+            grid-template-columns: repeat(3, 1fr);
             }
 
+            //TODO: volver a poner estas clases
             .left {
                 &:hover {
                     transition: all .3s;

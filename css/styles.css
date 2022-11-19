@@ -81,26 +81,6 @@ body .dolar-container .precio-dolar span {
   color: #fff;
   font-family: "Roboto", sans-serif;
 }
-body .tvGrande {
-  grid-area: tvGrande;
-  display: block;
-  margin: 1rem auto;
-  font-size: 1rem;
-  text-align: center;
-  width: 400px;
-  min-height: 100px;
-  background-color: #ccc;
-}
-body .tvGrande.dragHover {
-  background-color: yellow;
-}
-body .tvGrande.dragDropped {
-  width: 90%;
-}
-body .tvGrande iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-}
 body .main-container {
   grid-area: contenedor;
   display: grid;
@@ -109,7 +89,6 @@ body .main-container {
   align-items: center;
 }
 body .main-container div iframe {
-  z-index: -10;
   justify-self: center;
   width: 100%;
   aspect-ratio: 16/9;
@@ -175,20 +154,29 @@ body main p, body main a {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "titulo titulo" "compra venta";
   }
-  body .main-container {
-    grid-template-columns: repeat(2, 1fr);
+  body .tvGrande {
+    grid-area: tvGrande;
+    display: block;
+    margin: 1rem auto;
+    font-size: 1rem;
+    text-align: center;
+    width: 400px;
+    min-height: 100px;
+    background-color: #ccc;
+    transition: all 1s;
   }
-  body .main-container iframe {
+  body .tvGrande.dragHover {
+    background-color: yellow;
+  }
+  body .tvGrande.dragDropped {
+    width: 90%;
+  }
+  body .tvGrande iframe {
     width: 100%;
     aspect-ratio: 16/9;
   }
-  body footer div img {
-    width: 75px;
-  }
-}
-@media only screen and (min-width: 1200px) {
   body .main-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   body .main-container div {
     position: relative;
@@ -213,25 +201,33 @@ body main p, body main a {
     aspect-ratio: 16/9;
     transition: all 0.3s;
   }
-  body .main-container .left:hover {
+  body .main-container footer div img {
+    width: 75px;
+  }
+}
+@media only screen and (min-width: 767px) and (min-width: 1200px) {
+  body .main-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body .left:hover {
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(50%) scale(2);
   }
-  body .main-container .center:hover {
+  body .center:hover {
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(0) scale(2);
   }
-  body .main-container .right:hover {
+  body .right:hover {
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(-50%) scale(2);
   }
-  body footer {
+  footer {
     margin-top: calc(2 * (1rem + 1vw));
   }
-  body main p, body main a {
+  main p, main a {
     color: #00FF41;
     width: 75%;
   }

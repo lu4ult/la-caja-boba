@@ -95,6 +95,9 @@ body .main-container div iframe {
   width: 100%;
   aspect-ratio: 16/9;
 }
+body .scrollToFit {
+  display: none;
+}
 body .cafe {
   grid-area: cafecito;
   margin-top: calc(2 * (1rem + 1vw));
@@ -231,6 +234,35 @@ body main p, body main a {
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(-50%) scale(2);
+  }
+  body .scrollToFit {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+  body .scrollToFit svg {
+    background-color: inherit;
+    width: 50px;
+    height: 50px;
+    fill: rgba(68, 68, 68, 0.9);
+  }
+  body .scrollToFit:hover {
+    cursor: pointer;
+  }
+  body .scrollToFit:hover svg {
+    fill: green;
+  }
+  body .scrollToFit:hover::after {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    content: "scroll";
+    color: green;
+    font-size: 0.75rem;
   }
   body footer {
     margin-top: calc(2 * (1rem + 1vw));

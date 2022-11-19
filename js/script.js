@@ -36,6 +36,14 @@ if(inicios >= 2 && localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === 
     });
 }
 
+if(!produccion) {
+  let hoy = new Date();
+  let guardado = new Date(JSON.parse(localStorage.getItem("la-caja-boba-encuesta_no-mostrar")));
+  diffDays = Math.ceil((hoy-guardado) / (1000 * 60 * 60 * 24));
+  console.log("Días desde no mostrar: " + diffDays);
+}
+
+
 /*************************************************************************************************/
 function reconstruirGrid() {
   if(produccion === false)
@@ -200,3 +208,12 @@ tvGrande.addEventListener("drop", (e) => {
   tvGrande.scrollIntoView(top);
 
 });
+
+function scrollearPantalla() {
+  if(tvGrandeActivo) {
+    tvGrande.scrollIntoView(top);
+  }
+  else {
+    document.getElementById("main-container").scrollIntoView(top);
+  }
+}

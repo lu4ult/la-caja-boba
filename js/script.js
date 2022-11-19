@@ -10,7 +10,17 @@ console.log("Produccion: " + produccion);
 
 /*************************************************************************************************/
 
-if(localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
+let inicios = 0;
+if(localStorage.getItem("la-caja-boba-entradas_usuario") === null) {
+  localStorage.setItem("la-caja-boba-entradas_usuario",0);
+}
+else {
+  inicios = parseInt(localStorage.getItem("la-caja-boba-entradas_usuario"));
+  console.log("Inicios: " + inicios);
+  localStorage.setItem("la-caja-boba-entradas_usuario",inicios+1);
+}
+
+if(inicios >= 2 && localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
   Swal.fire({
       title: '¿Nos ayudarías contestando una breve encuesta sobre esta herramienta?',
       showDenyButton: true,

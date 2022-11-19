@@ -5,6 +5,7 @@ let tvGrandeActivo = false;
 let primerCarga = false;
 
 let produccion = "https://fastidious-fairy-1f357e.netlify.app/" === window.location.href || "https://animated-biscochitos-fe56b0.netlify.app/" === window.location.href;
+//produccion = true;
 console.log("Produccion: " + produccion);
 
 /*************************************************************************************************/
@@ -29,17 +30,36 @@ if(localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
 
 /*************************************************************************************************/
 function reconstruirGrid() {
+  if(produccion === false)
+    console.log("Reconstruyendo Grid");
   let mainContainer = document.getElementById("main-container");
   mainContainer.innerHTML = "";
   for(let i = 1; i<=6;i++) {
     let monitor = `
     <div id="iframe${i}Container">
       <div id="monitor${i}" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z"/></svg></div>
-      <iframe id="iframe${i}" src="https://www.youtube.com/embed/${streamsUrls[i-1]}" title="${streamNames[i-1].toUpperCase()}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="iframe${i}" src="https://www.youtube.com/embed/${streamsUrls[i-1]}" title="${streamNames[i-1].toUpperCase()}" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     `;
     mainContainer.innerHTML += monitor;
   }
+
+  //Tiene que estar acá porque sino como que "se pierden" los listeners
+  let monitores = [];
+  monitores = document.querySelectorAll(".svg-container");
+  //console.log(...monitores);
+  monitores.forEach(e => {
+    e.addEventListener("dragstart", f => {
+      f.dataTransfer.setData("id",f.target.id);
+      console.log(f.target.id)
+      if(tvGrandeActivo === true) {                           //Si se empieza a desplazar una pantallita pero el tv grande está en uso limpiamos todo
+        //console.log("tv grande activo");
+        document.getElementById("tvGrande").innerHTML = "";
+        //document.getElementById("tvGrande").classList.remove("dragDropped");
+        document.getElementById("tvGrande").classList.add("dragHover");
+      }
+    });
+  });
 }
 
 reconstruirGrid();
@@ -92,8 +112,13 @@ async function buscar(buscado) {
 // });
 
 if(produccion) {
-  buscar("camara senadores").then(rtta => {
-    document.getElementById("iframe5").src = "https://youtube.com/embed/"+ rtta;
+  let indice = 5;
+  //console.log("buscando: " + streamNames[indice-1])
+  buscar(streamNames[indice-1]).then(rtta => {
+    document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
+    //console.log(streamsUrls);
+    streamsUrls[indice-1] = rtta;
+    //console.log(streamsUrls);
   });
 }
 
@@ -116,21 +141,8 @@ if(produccion) {
 //  console.log("enviando: " + e.target.id);
 // });
 
-let monitores = [];
-monitores = document.querySelectorAll(".svg-container");
-//console.log(...monitores);
-monitores.forEach(e => {
-  e.addEventListener("dragstart", f => {
-    f.dataTransfer.setData("id",f.target.id);
-    console.log(f.target.id)
-    if(tvGrandeActivo === true) {                           //Si se empieza a desplazar una pantallita pero el tv grande está en uso limpiamos todo
-      console.log("tv grande activo");
-      document.getElementById("tvGrande").innerHTML = "";
-      //document.getElementById("tvGrande").classList.remove("dragDropped");
-      document.getElementById("tvGrande").classList.add("dragHover");
-    }
-  });
-});
+
+
 
 let tvGrande = document.getElementById("tvGrande");
 tvGrande.addEventListener("dragenter", (e) => {
@@ -152,6 +164,8 @@ tvGrande.addEventListener("drop", (e) => {
   e.target.classList.remove("dragHover");
   e.target.classList.add("dragDropped");
 
+  //Reconstruimos el main-container para que si no es el primer monitor que se desplaza no quede más de un agujero.
+  reconstruirGrid();
 
   let idRecibido = e.dataTransfer.getData("id");
   let idIframe = idRecibido.replace("monitor","iframe");
@@ -164,15 +178,11 @@ tvGrande.addEventListener("drop", (e) => {
   let iframeAMover = document.getElementById(idIframe);
   let contenedorAEliminar = document.getElementById(idContainer);
 
-  // if(tvGrandeActivo === true) {
-  //   reconstruirGrid();
-  // }
-
   document.getElementById("tvGrande").innerHTML = "";                 //Para limpiear el mensaje al inicio.
   document.getElementById("tvGrande").appendChild(iframeAMover);
 
   contenedorAEliminar.innerHTML = "";       //Eliminamos todo el contenido directamente.
-  tvGrandeActivo = true;
+  tvGrandeActivo = true;                    //Para las clases de Tv grande
   
 });
 

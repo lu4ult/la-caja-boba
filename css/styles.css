@@ -215,6 +215,7 @@ body main p, body main a {
     grid-template-columns: repeat(3, 1fr);
   }
   body .main-container .left:hover {
+    z-index: 50;
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(50%) scale(2);

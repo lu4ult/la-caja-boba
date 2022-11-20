@@ -51,7 +51,6 @@ function reconstruirGrid() {
   let mainContainer = document.getElementById("main-container");
   mainContainer.innerHTML = "";
   for(let i = 1; i<=streamNames.length;i++) {
-    console.log(i)
     let clase = "center";
     if(i===1 || i ===4 || i === 7)
       clase = "left";
@@ -89,6 +88,7 @@ reconstruirGrid();
 /*************************************************************************************************/
 
 async function buscar(buscado) {
+  console.log("google api: " + buscado);
   const response = await fetch('https://www.googleapis.com/youtube/v3/search?key=AIzaSyAD6_lw_djitCmUxEI8WyNyjvonlUTT57E&q='+buscado+' en vivo', {});
   //console.log('response.status: ', response.status); //
   if(response.status === 403) {

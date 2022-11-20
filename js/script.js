@@ -1,5 +1,5 @@
-let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","wHn1_QVoXGM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY"];
-let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+"];
+let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","wHn1_QVoXGM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY","null","null","null"];
+let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+", "DSports","television publica","DeporTV"];
 let tvGrandeActivo = false;
 
 let produccion = "https://fastidious-fairy-1f357e.netlify.app/" === window.location.href || "https://animated-biscochitos-fe56b0.netlify.app/" === window.location.href;
@@ -50,11 +50,12 @@ function reconstruirGrid() {
     console.log("Reconstruyendo Grid");
   let mainContainer = document.getElementById("main-container");
   mainContainer.innerHTML = "";
-  for(let i = 1; i<=6;i++) {
+  for(let i = 1; i<=streamNames.length;i++) {
+    console.log(i)
     let clase = "center";
-    if(i===1 || i ===4)
+    if(i===1 || i ===4 || i === 7)
       clase = "left";
-    if(i===3 || i ===6)
+    if(i===3 || i ===6 || i === 9)
       clase = "right";
     let monitor = `
     <div id="iframe${i}Container" class="${clase}">
@@ -132,8 +133,47 @@ async function buscar(buscado) {
 //   document.getElementById("iframe4").src = "https://youtube.com/embed/"+ rtta;
 // });
 
+
+//Senado
 if(produccion) {
   let indice = 5;
+  //console.log("buscando: " + streamNames[indice-1])
+  buscar(streamNames[indice-1]).then(rtta => {
+    document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
+    //console.log(streamsUrls);
+    streamsUrls[indice-1] = rtta;
+    //console.log(streamsUrls);
+  });
+}
+
+
+//DSports
+if(produccion) {
+  let indice = 7;
+  //console.log("buscando: " + streamNames[indice-1])
+  buscar(streamNames[indice-1]).then(rtta => {
+    document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
+    //console.log(streamsUrls);
+    streamsUrls[indice-1] = rtta;
+    //console.log(streamsUrls);
+  });
+}
+
+//Tv publica
+if(produccion) {
+  let indice = 8;
+  //console.log("buscando: " + streamNames[indice-1])
+  buscar(streamNames[indice-1]).then(rtta => {
+    document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
+    //console.log(streamsUrls);
+    streamsUrls[indice-1] = rtta;
+    //console.log(streamsUrls);
+  });
+}
+
+//Depor TV
+if(produccion) {
+  let indice = 9;
   //console.log("buscando: " + streamNames[indice-1])
   buscar(streamNames[indice-1]).then(rtta => {
     document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;

@@ -87,6 +87,16 @@ reconstruirGrid();
 
 /*************************************************************************************************/
 
+async function duracion(videoId) {
+  const response = await fetch('https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id='+videoId+'&key=AIzaSyAD6_lw_djitCmUxEI8WyNyjvonlUTT57E', {});
+  const data = await response.json();
+  let duracion = data['items']['0']['contentDetails']['duration'];
+  //console.log(duracion);
+
+  //console.log(data);
+  return duracion;
+}
+
 async function buscar(buscado) {
   console.log("google api: " + buscado);
   const response = await fetch('https://www.googleapis.com/youtube/v3/search?key=AIzaSyAD6_lw_djitCmUxEI8WyNyjvonlUTT57E&q='+buscado+' en vivo', {});
@@ -113,11 +123,18 @@ async function buscar(buscado) {
 
 
 
+//C5n
+// if(!produccion) {
+//   let indice = 1;
+//   //console.log("buscando: " + streamNames[indice-1])
+//   buscar(streamNames[indice-1]).then(rtta => {
+//     document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
+//     //console.log(streamsUrls);
+//     streamsUrls[indice-1] = rtta;
 
-// buscar("c5n").then(rtta => {
-//   console.log("a24: " + rtta)
-//   document.getElementById("iframe1").src = "https://youtube.com/embed/"+ rtta;
-// });
+//     duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
+//   });
+// }
 
 // buscar("a24").then(rtta => {
 //   console.log("a24: " + rtta)
@@ -142,7 +159,8 @@ if(produccion) {
     document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
     //console.log(streamsUrls);
     streamsUrls[indice-1] = rtta;
-    //console.log(streamsUrls);
+
+    duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
   });
 }
 
@@ -155,7 +173,7 @@ if(produccion) {
     document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
     //console.log(streamsUrls);
     streamsUrls[indice-1] = rtta;
-    //console.log(streamsUrls);
+    duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
   });
 }
 
@@ -167,7 +185,7 @@ if(produccion) {
     document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
     //console.log(streamsUrls);
     streamsUrls[indice-1] = rtta;
-    //console.log(streamsUrls);
+    duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
   });
 }
 
@@ -179,7 +197,7 @@ if(produccion) {
     document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
     //console.log(streamsUrls);
     streamsUrls[indice-1] = rtta;
-    //console.log(streamsUrls);
+    duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
   });
 }
 

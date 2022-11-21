@@ -1,4 +1,4 @@
-let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","wHn1_QVoXGM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY","null","Uv6IrDOYvmQ","null"];
+let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","wHn1_QVoXGM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY","XtR8c0IM8Vo","Uv6IrDOYvmQ","WD2gX1kEKSQ"];
 let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+", "DSports","television publica","DeporTV"];
 let tvGrandeActivo = false;
 
@@ -275,3 +275,15 @@ function scrollearPantalla() {
     document.getElementById("main-container").scrollIntoView(top);
   }
 }
+
+
+/*************************************************************************************************/
+// Mundial
+let fechaActual = new Date();
+let dia = fechaActual.getDate();
+let mes = fechaActual.getMonth() +1;
+
+if((dia === 21 && mes === 11) || (dia === 22 && mes === 11) || (dia === 26 && mes === 11)) {
+  document.getElementById("mundial").classList.remove("oculto");
+}
+

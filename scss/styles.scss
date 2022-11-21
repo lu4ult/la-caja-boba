@@ -65,6 +65,7 @@ body {
         "dolar"
         "tvGrande"
         "contenedor"
+        "mundial"
         "cafecito"
         "footer"
         "main";
@@ -131,6 +132,30 @@ body {
             }
         }
 
+    }
+
+    .mundial {
+        grid-area: mundial;
+        background-color: inherit;
+        border: 5px solid red;
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        h6, span, a {
+            color: white;
+            font-size: 1rem;
+        }
+        h6 {
+            font-size: 1.5rem;
+            color: red;
+        }
+
+        &.oculto {
+            display: none;
+        }
     }
 
     .main-container {

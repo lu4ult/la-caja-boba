@@ -6,6 +6,12 @@ let produccion = "https://fastidious-fairy-1f357e.netlify.app/" === window.locat
 //produccion = true;
 console.log("Produccion: " + produccion);
 
+
+//Se redirige github pages a Netlify
+if("http://127.0.0.1:5500/" === window.location.href) {
+  location.replace("https://animated-biscochitos-fe56b0.netlify.app/")
+}
+
 /*************************************************************************************************/
 
 let inicios = 0;

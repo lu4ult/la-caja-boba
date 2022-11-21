@@ -32,7 +32,7 @@ a {
 body {
   display: grid;
   background: #000;
-  grid-template-areas: "header" "dolar" "contenedor" "cafecito" "footer" "main";
+  grid-template-areas: "header" "dolar" "tvGrande" "contenedor" "mundial" "cafecito" "footer" "main";
 }
 body header {
   grid-area: header;
@@ -44,7 +44,6 @@ body header img {
 body .dolar-container {
   grid-area: dolar;
   justify-content: space-around;
-  margin-bottom: 1rem;
 }
 body .dolar-container .precio-dolar {
   display: grid;
@@ -64,22 +63,44 @@ body .dolar-container .precio-dolar:hover {
 body .dolar-container .precio-dolar .precio-dolar__titulo {
   grid-area: titulo;
   justify-self: center;
-  font-size: calc(1.1 * (1rem + 1vw));
+  font-size: calc(0.9 * (1rem + 1vw));
 }
 body .dolar-container .precio-dolar .precio-dolar__valor-compra {
   grid-area: compra;
   justify-self: center;
-  font-size: calc(0.8 * (1rem + 1vw));
+  font-size: calc(0.6 * (1rem + 1vw));
   margin: 2px 16px;
 }
 body .dolar-container .precio-dolar .precio-dolar__valor-venta {
   grid-area: venta;
   justify-self: center;
-  font-size: calc(0.8 * (1rem + 1vw));
+  font-size: calc(0.6 * (1rem + 1vw));
 }
 body .dolar-container .precio-dolar span {
   color: #fff;
   font-family: "Roboto", sans-serif;
+}
+body .mundial {
+  grid-area: mundial;
+  background-color: inherit;
+  border: 5px solid red;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+body .mundial h6, body .mundial span, body .mundial a {
+  color: white;
+  font-size: 1rem;
+}
+body .mundial h6 {
+  font-size: 1.5rem;
+  color: red;
+}
+body .mundial.oculto {
+  display: none;
 }
 body .main-container {
   grid-area: contenedor;
@@ -88,10 +109,16 @@ body .main-container {
   grid-template-columns: repeat(1, 1fr);
   align-items: center;
 }
-body .main-container iframe {
+body .main-container div .svg-container {
+  display: none;
+}
+body .main-container div iframe {
   justify-self: center;
-  width: 80%;
+  width: 100%;
   aspect-ratio: 16/9;
+}
+body .scrollToFit {
+  display: none;
 }
 body .cafe {
   grid-area: cafecito;
@@ -125,7 +152,6 @@ body footer div img {
 body main {
   grid-area: main;
   flex-direction: column;
-  margin-bottom: calc(5 * (1rem + 1vw));
 }
 body main h2 {
   margin-top: calc(4 * (1rem + 1vw));
@@ -146,16 +172,64 @@ body main p, body main a {
 
 @media only screen and (min-width: 767px) {
   body .dolar-container .precio-dolar {
-    width: 30%;
+    width: 25%;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "titulo titulo" "compra venta";
+  }
+  body .tvGrande {
+    grid-area: tvGrande;
+    display: block;
+    width: 200px;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    color: #eee;
+    text-align: center;
+    border-radius: 10px;
+    border: 10px solid #ccc;
+    background-color: #333;
+    transition: all 1s;
+  }
+  body .tvGrande.dragDropped {
+    width: 80%;
+    border: none;
+    background: none;
+    padding: 0;
+    aspect-ratio: 16/9;
+  }
+  body .tvGrande.dragHover {
+    background-color: blueviolet;
+  }
+  body .tvGrande iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
   }
   body .main-container {
     grid-template-columns: repeat(2, 1fr);
   }
-  body .main-container iframe {
+  body .main-container div {
+    position: relative;
+  }
+  body .main-container div .svg-container {
+    display: block;
+  }
+  body .main-container div .svg-container svg {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    width: 50px;
+    height: 50px;
+    fill: rgba(68, 68, 68, 0.2);
+    cursor: pointer;
+  }
+  body .main-container div iframe {
     width: 100%;
     aspect-ratio: 16/9;
+    transition: all 0.3s;
+  }
+  body .main-container div:hover .svg-container svg {
+    fill: green;
   }
   body footer div img {
     width: 75px;
@@ -165,25 +239,52 @@ body main p, body main a {
   body .main-container {
     grid-template-columns: repeat(3, 1fr);
   }
-  body .main-container iframe {
-    width: 100%;
-    aspect-ratio: 16/9;
-    transition: all 0.3s;
-  }
   body .main-container .left:hover {
+    z-index: 50;
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(50%) scale(2);
   }
   body .main-container .center:hover {
+    z-index: 50;
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(0) scale(2);
   }
   body .main-container .right:hover {
+    z-index: 50;
     transition: all 0.3s;
     transition-delay: 2s;
     transform: translateX(-50%) scale(2);
+  }
+  body .scrollToFit {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+  body .scrollToFit svg {
+    background-color: inherit;
+    width: 50px;
+    height: 50px;
+    fill: rgba(68, 68, 68, 0.9);
+  }
+  body .scrollToFit:hover {
+    cursor: pointer;
+  }
+  body .scrollToFit:hover svg {
+    fill: green;
+  }
+  body .scrollToFit:hover::after {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    content: "scroll";
+    color: green;
+    font-size: 0.75rem;
   }
   body footer {
     margin-top: calc(2 * (1rem + 1vw));

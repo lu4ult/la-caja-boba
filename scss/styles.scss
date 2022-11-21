@@ -48,12 +48,6 @@ a {
     color: #fff;
 }
 
-
-// img {
-//     width: $baseSize;
-//     height: $baseSize;
-// }
-
 .fila {
     display: flex;
     flex-direction: row;
@@ -65,20 +59,16 @@ a {
 body {
     display: grid;
     background: #000;
+    //grid-template-rows: 2vh 2vh auto auto auto auto auto;
     grid-template-areas:
         "header"
         "dolar"
+        "tvGrande"
         "contenedor"
+        "mundial"
         "cafecito"
         "footer"
         "main";
-
-    // grid-template-areas:
-    //     "header"
-    //     "cafecito"
-    //     "dolar"
-    //     "main"
-    //     "footer";
 
     header {
         grid-area: header;
@@ -95,13 +85,11 @@ body {
         grid-area: dolar;
         @extend .fila;
         justify-content: space-around;
-        margin-bottom: 1rem;
 
         .precio-dolar {
             display: grid;
             border: 3px solid #00FF41;
 
-            //margin-bottom: 10px;
             border-radius: 25px;
             box-shadow: 0 0 15px 5px rgba(0,255,0,0.7);
             transition: all .5s;
@@ -122,20 +110,20 @@ body {
             .precio-dolar__titulo {
                 grid-area: titulo;
                 justify-self: center;
-                font-size: calc(1.1* $baseSize);
+                font-size: calc(0.9* $baseSize);
             }
 
             .precio-dolar__valor-compra {
                 grid-area: compra;
                 justify-self: center;
-                font-size: calc(0.8* $baseSize);
+                font-size: calc(0.6* $baseSize);
                 margin: 2px 16px;
             }
 
             .precio-dolar__valor-venta {
                 grid-area: venta;
                 justify-self: center;
-                font-size: calc(0.8* $baseSize);
+                font-size: calc(0.6* $baseSize);
             }
 
             span {
@@ -146,6 +134,30 @@ body {
 
     }
 
+    .mundial {
+        grid-area: mundial;
+        background-color: inherit;
+        border: 5px solid red;
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        h6, span, a {
+            color: white;
+            font-size: 1rem;
+        }
+        h6 {
+            font-size: 1.5rem;
+            color: red;
+        }
+
+        &.oculto {
+            display: none;
+        }
+    }
+
     .main-container {
         grid-area: contenedor;
 
@@ -153,12 +165,21 @@ body {
         gap: 0;
         grid-template-columns: repeat(1, 1fr);
         align-items: center;
-        iframe {
-            // border: 5px solid green;
-            justify-self: center;
-            width: 80%;
-            aspect-ratio: 16/9;
+        div {
+            .svg-container {
+                display: none;
+               }
+
+            iframe {
+                justify-self: center;
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
         }
+    }
+
+    .scrollToFit {
+        display: none;
     }
 
     .cafe {
@@ -214,7 +235,6 @@ body {
         grid-area: main;
         @extend .fila;
         flex-direction: column;
-        margin-bottom: calc(5 * $baseSize);
         h2 {
             margin-top: calc(4 * $baseSize);
             margin-bottom: calc(1 * $baseSize);
@@ -239,7 +259,7 @@ body {
     body {
         .dolar-container {
             .precio-dolar {
-                width: 30%;
+                width: 25%;
                 grid-template-columns: 1fr 1fr;
                 grid-template-areas:
                 "titulo titulo"
@@ -247,11 +267,71 @@ body {
             }
         }
 
-        .main-container {
-            grid-template-columns: repeat(2, 1fr);
+        .tvGrande {
+            grid-area: tvGrande;
+
+            display: block;
+            width: 200px;
+            aspect-ratio: 4/3;
+            margin: 0 auto;
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            color: #eee;
+            text-align: center;
+            border-radius: 10px;
+            border: 10px solid #ccc;
+            background-color: #333;
+            //border: 3px solid #666;
+            transition: all 1s;
+
+            &.dragDropped {
+                //background-color: cyan;
+                width: 80%;
+                border: none;
+                background: none;
+                padding: 0;
+                aspect-ratio: 16/9;
+            }
+
+            &.dragHover {
+                background-color: blueviolet;
+            }
+
             iframe {
                 width: 100%;
                 aspect-ratio: 16/9;
+            }
+        }
+
+        .main-container {
+            grid-template-columns: repeat(2, 1fr);
+            div {
+                position: relative;
+                //background-color: #ccc;
+                .svg-container {
+                    display: block;
+                    svg {
+                        position: absolute;
+                        right: 20px;
+                        top: 100px;
+                        width: 50px;
+                        height: 50px;
+                        fill: rgba(68,68,68,0.2);
+                        cursor: pointer;
+                    }
+                }
+                iframe {
+                    width: 100%;
+                    aspect-ratio: 16/9;
+                    transition: all .3s;
+                }
+                &:hover {
+                     .svg-container {
+                        svg {
+                           fill: green;
+                        }
+                    }
+                }
             }
         }
 
@@ -270,14 +350,10 @@ body {
         .main-container {
             grid-template-columns: repeat(3, 1fr);
 
-            iframe {
-                width: 100%;
-                aspect-ratio: 16/9;
-                transition: all .3s;
-            }
-
+            //TODO: volver a poner estas clases
             .left {
                 &:hover {
+                    z-index: 50;
                     transition: all .3s;
                     transition-delay: 2s;
                     transform: translateX(50%) scale(2);
@@ -286,6 +362,7 @@ body {
 
             .center {
                 &:hover {
+                    z-index: 50;
                     transition: all .3s;
                     transition-delay: 2s;
                     transform: translateX(0) scale(2);
@@ -294,10 +371,42 @@ body {
 
             .right {
                 &:hover {
-                    //position: relative;
+                    z-index: 50;
                     transition: all .3s;
                     transition-delay: 2s;
                     transform: translateX(-50%) scale(2);
+                }
+            }
+        }
+
+        .scrollToFit {
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+
+            background-color: transparent;
+            outline: none;
+            border: none;
+            svg {
+                background-color: inherit;
+                width: 50px;
+                height: 50px;
+                fill: rgba(68,68,68,0.9);
+            }
+
+            &:hover {
+                cursor: pointer;
+                svg {
+                    fill: green;
+                }
+                &::after {
+                    position: absolute;
+                    top: 55px;
+                    right: 0;
+                    content: "scroll";
+                    color: green;
+                    font-size: 0.75rem;
                 }
             }
         }
@@ -313,4 +422,3 @@ body {
         }
     }
 }
-

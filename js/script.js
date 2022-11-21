@@ -8,7 +8,7 @@ console.log("Produccion: " + produccion);
 
 
 //Se redirige github pages a Netlify
-if("http://127.0.0.1:5500/" === window.location.href) {
+if("https://lu4ult.github.io/la-caja-boba/index.html" === window.location.href) {
   location.replace("https://animated-biscochitos-fe56b0.netlify.app/")
 }
 

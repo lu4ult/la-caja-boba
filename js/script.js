@@ -1,4 +1,4 @@
-let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","wHn1_QVoXGM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY","XtR8c0IM8Vo","Uv6IrDOYvmQ","WD2gX1kEKSQ"];
+let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","wHn1_QVoXGM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY","wrI4IhCkj-0","Uv6IrDOYvmQ","MosC_9l4rk0"];
 let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+", "DSports","television publica","DeporTV"];
 let tvGrandeActivo = false;
 
@@ -170,7 +170,7 @@ if(produccion) {
   });
 }
 
-
+/*
 //DSports
 if(produccion) {
   let indice = 7;
@@ -206,7 +206,7 @@ if(produccion) {
     duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
   });
 }
-
+*/
 
 // buscar("ln+").then(rtta => {
 //   document.getElementById("iframe6").src = "https://youtube.com/embed/"+ rtta;

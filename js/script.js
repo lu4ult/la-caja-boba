@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","wHn1_QVoXGM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY","wrI4IhCkj-0","Uv6IrDOYvmQ","MosC_9l4rk0"];
-let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+", "DSports","television publica","DeporTV"];
-=======
 let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","wHn1_QVoXGM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY"];
 let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+"];
->>>>>>> dev
 let tvGrandeActivo = false;
 
 let produccion = "https://fastidious-fairy-1f357e.netlify.app/" === window.location.href || "https://animated-biscochitos-fe56b0.netlify.app/" === window.location.href;

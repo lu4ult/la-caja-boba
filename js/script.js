@@ -147,10 +147,18 @@ async function buscar(buscado) {
 //   document.getElementById("iframe2").src = "https://youtube.com/embed/"+ rtta;
 // });
 
-// buscar("tn").then(rtta => {
-//   console.log("tn: " + rtta)
-//   document.getElementById("iframe3").src = "https://youtube.com/embed/"+ rtta;
-// });
+//Tn
+if(produccion) {
+  let indice = 3;
+  //console.log("buscando: " + streamNames[indice-1])
+  buscar(streamNames[indice-1]).then(rtta => {
+    document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
+    //console.log(streamsUrls);
+    streamsUrls[indice-1] = rtta;
+
+    duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
+  });
+}
 
 // buscar("diputados tv").then(rtta => {
 //   document.getElementById("iframe4").src = "https://youtube.com/embed/"+ rtta;

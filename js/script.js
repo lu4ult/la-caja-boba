@@ -1,4 +1,4 @@
-let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","wHn1_QVoXGM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY"];
+let streamsUrls = ["dbteiGt_t_4","o8JBz0XFS_k","O3bhL1gPdxM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY"];
 let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+"];
 let tvGrandeActivo = false;
 
@@ -148,15 +148,24 @@ async function buscar(buscado) {
 // });
 
 //Tn
-if(produccion) {
+if(!produccion) {
   let indice = 3;
-  //console.log("buscando: " + streamNames[indice-1])
+  console.log("buscando: " + streamNames[indice-1])
   buscar(streamNames[indice-1]).then(rtta => {
-    document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
+    console.log(rtta);
     //console.log(streamsUrls);
-    streamsUrls[indice-1] = rtta;
-
-    duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
+    duracion(rtta).then(datos => {
+      console.log("Duracion: " + datos)
+      if(datos === "P0D") {
+        console.log("duracion ok")
+        console.log("Rtta: " + rtta)
+        streamsUrls[indice-1] = rtta;
+        document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ streamsUrls[indice-1];
+      }
+      else {
+        console.log("fallo duracion")
+      }
+    });
   });
 }
 

@@ -187,43 +187,6 @@ if(produccion) {
   });
 }
 
-/*
-//DSports
-if(produccion) {
-  let indice = 7;
-  //console.log("buscando: " + streamNames[indice-1])
-  buscar(streamNames[indice-1]).then(rtta => {
-    document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
-    //console.log(streamsUrls);
-    streamsUrls[indice-1] = rtta;
-    duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
-  });
-}
-
-//Tv publica
-if(produccion) {
-  let indice = 8;
-  //console.log("buscando: " + streamNames[indice-1])
-  buscar(streamNames[indice-1]).then(rtta => {
-    document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
-    //console.log(streamsUrls);
-    streamsUrls[indice-1] = rtta;
-    duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
-  });
-}
-
-//Depor TV
-if(produccion) {
-  let indice = 9;
-  //console.log("buscando: " + streamNames[indice-1])
-  buscar(streamNames[indice-1]).then(rtta => {
-    document.getElementById("iframe"+indice).src = "https://youtube.com/embed/"+ rtta;
-    //console.log(streamsUrls);
-    streamsUrls[indice-1] = rtta;
-    duracion(rtta).then(datos => {console.log(streamNames[indice-1] + " duracion: " + datos);});
-  });
-}
-*/
 
 // buscar("ln+").then(rtta => {
 //   document.getElementById("iframe6").src = "https://youtube.com/embed/"+ rtta;
@@ -306,7 +269,7 @@ let fechaActual = new Date();
 let dia = fechaActual.getDate();
 let mes = fechaActual.getMonth() +1;
 
-if((dia === 22 && mes === 11) || (dia === 26 && mes === 11) || (dia === 30 && mes === 11)) {
+if((dia === 3 && mes === 12) || (dia === 30 && mes === 11)) {
   document.getElementById("mundial").classList.remove("oculto");
 }
 

@@ -208,7 +208,10 @@ if(produccion) {
 /*************************************************************************************************/
 
 if(produccion) {
-  getDolar().then(updateValues);
+  console.log("Inicio llamar dolar")
+  //getDolar().then(updateValues);
+  getDolar();
+  console.log("Fin llamar dolar")
 }
 
 /*************************************************************************************************/

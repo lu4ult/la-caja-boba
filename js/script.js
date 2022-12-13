@@ -1,4 +1,4 @@
-let streamsUrls = ["a7CfsVWRq74","o8JBz0XFS_k","O3bhL1gPdxM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY"];
+let streamsUrls = ["BUxXxVh7XhI","o8JBz0XFS_k","O3bhL1gPdxM","9KKwqJsMLDg","vACfnp27ZkQ","IOSVORAZnRY"];
 let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+"];
 let tvGrandeActivo = false;
 
@@ -208,7 +208,10 @@ if(produccion) {
 /*************************************************************************************************/
 
 if(produccion) {
-  getDolar().then(updateValues);
+  console.log("Inicio llamar dolar")
+  //getDolar().then(updateValues);
+  getDolar();
+  console.log("Fin llamar dolar")
 }
 
 /*************************************************************************************************/

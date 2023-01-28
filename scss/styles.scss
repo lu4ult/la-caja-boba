@@ -63,6 +63,7 @@ body {
     grid-template-areas:
         "header"
         "dolar"
+        "nuevaversion"
         "tvGrande"
         "contenedor"
         "mundial"
@@ -132,6 +133,23 @@ body {
             }
         }
 
+    }
+
+    .nuevaversion {
+        margin: 1rem 0;
+        padding: 0.5rem;
+        grid-area: nuevaversion;
+        color: white;
+        p,a {
+            font-size: 0.6rem;
+        }
+        a {
+            color: red;
+        }
+
+        &.oculto {
+            display: none;
+        }
     }
 
     .mundial {

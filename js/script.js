@@ -285,7 +285,7 @@ let fechaActual = new Date();
 let dia = fechaActual.getDate();
 let mes = fechaActual.getMonth() +1;
 
-if((dia === 3 && mes === 12) || (dia === 30 && mes === 11)) {
-  document.getElementById("mundial").classList.remove("oculto");
+if(mes === 1) {
+  document.getElementById("nuevaversion").classList.remove("oculto");
 }
 

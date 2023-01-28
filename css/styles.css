@@ -32,7 +32,7 @@ a {
 body {
   display: grid;
   background: #000;
-  grid-template-areas: "header" "dolar" "tvGrande" "contenedor" "mundial" "cafecito" "footer" "main";
+  grid-template-areas: "header" "dolar" "nuevaversion" "tvGrande" "contenedor" "mundial" "cafecito" "footer" "main";
 }
 body header {
   grid-area: header;
@@ -79,6 +79,21 @@ body .dolar-container .precio-dolar .precio-dolar__valor-venta {
 body .dolar-container .precio-dolar span {
   color: #fff;
   font-family: "Roboto", sans-serif;
+}
+body .nuevaversion {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  grid-area: nuevaversion;
+  color: white;
+}
+body .nuevaversion p, body .nuevaversion a {
+  font-size: 0.6rem;
+}
+body .nuevaversion a {
+  color: red;
+}
+body .nuevaversion.oculto {
+  display: none;
 }
 body .mundial {
   grid-area: mundial;

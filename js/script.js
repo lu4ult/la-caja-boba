@@ -285,7 +285,7 @@ let fechaActual = new Date();
 let dia = fechaActual.getDate();
 let mes = fechaActual.getMonth() +1;
 
-if(mes === 1) {
+if(mes >= 1) {
   document.getElementById("nuevaversion").classList.remove("oculto");
 }
 

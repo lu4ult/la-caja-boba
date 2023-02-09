@@ -1,4 +1,4 @@
-let streamsUrls = ["-LzhXjAeApw","o8JBz0XFS_k","6hWHWGJ1Gbw","Gq6MIaZ501A","vACfnp27ZkQ","0ib0IQf3_8M"];
+let streamsUrls = ["-sV6nLwr-txA","o8JBz0XFS_k","6hWHWGJ1Gbw","Gq6MIaZ501A","vACfnp27ZkQ","0ib0IQf3_8M"];
 let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+"];
 let tvGrandeActivo = false;
 
@@ -24,23 +24,30 @@ else {
   localStorage.setItem("la-caja-boba-entradas_usuario",inicios+1);
 }
 
-if(inicios >= 2 && localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
-  Swal.fire({
-      title: '¿Nos ayudarías contestando una breve encuesta sobre esta herramienta?',
-      showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Si! Vamos a la encuesta!',
-      denyButtonText: `No volver a mostrar`,
-      cancelButtonText: 'Quizás en un futuro...',
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isConfirmed) {
-          window.open("https://forms.gle/3KWjrWKT4mLr73L27", '_blank').focus();
-      } else if (result.isDenied) {
-        localStorage.setItem("la-caja-boba-encuesta_no-mostrar",JSON.stringify(new Date()))
-      }
-    });
+if(localStorage.getItem("la-caja-boba_AB-test") === null) {
+  const randomABTest = Boolean(Math.floor(Math.random()*100)%2);
+  console.log("Ab test:")
+  console.log(randomABTest)
+  localStorage.setItem("la-caja-boba_AB-test",randomABTest);
 }
+
+// if(inicios >= 2 && localStorage.getItem("la-caja-boba-encuesta_no-mostrar") === null) {
+//   Swal.fire({
+//       title: '¿Nos ayudarías contestando una breve encuesta sobre esta herramienta?',
+//       showDenyButton: true,
+//       showCancelButton: true,
+//       confirmButtonText: 'Si! Vamos a la encuesta!',
+//       denyButtonText: `No volver a mostrar`,
+//       cancelButtonText: 'Quizás en un futuro...',
+//     }).then((result) => {
+//       /* Read more about isConfirmed, isDenied below */
+//       if (result.isConfirmed) {
+//           window.open("https://forms.gle/3KWjrWKT4mLr73L27", '_blank').focus();
+//       } else if (result.isDenied) {
+//         localStorage.setItem("la-caja-boba-encuesta_no-mostrar",JSON.stringify(new Date()))
+//       }
+//     });
+// }
 
 if(!produccion) {
   let hoy = new Date();
@@ -285,7 +292,14 @@ let fechaActual = new Date();
 let dia = fechaActual.getDate();
 let mes = fechaActual.getMonth() +1;
 
-if(mes >= 1) {
+//console.log(localStorage.getItem("la-caja-boba_AB-test") === "true")
+
+if(mes >= 2 && dia >= 13 || localStorage.getItem("la-caja-boba_AB-test") == "true") {
+  document.getElementById("nuevaversionPrimerMensaje").classList.add("oculto")
   document.getElementById("nuevaversion").classList.remove("oculto");
+}
+
+if(mes >= 3) {
+  location.replace("https://lacajaboba.vercel.app/?src=lacajaboba")
 }
 

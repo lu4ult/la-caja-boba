@@ -1,4 +1,4 @@
-let streamsUrls = ["-sV6nLwr-txA","o8JBz0XFS_k","6hWHWGJ1Gbw","Gq6MIaZ501A","vACfnp27ZkQ","0ib0IQf3_8M"];
+let streamsUrls = ["sV6nLwr-txA","o8JBz0XFS_k","6hWHWGJ1Gbw","Gq6MIaZ501A","vACfnp27ZkQ","0ib0IQf3_8M"];
 let streamNames = ["c5n","a24","tn","diputados tv","senadores","ln+"];
 let tvGrandeActivo = false;
 

@@ -87,7 +87,8 @@ body .nuevaversion {
   color: white;
   background-color: #ff7733;
 }
-body .nuevaversion p, body .nuevaversion a {
+body .nuevaversion p,
+body .nuevaversion a {
   font-size: 0.6rem;
 }
 body .nuevaversion a {
@@ -107,7 +108,9 @@ body .mundial {
   align-items: center;
   width: 70%;
 }
-body .mundial h6, body .mundial span, body .mundial a {
+body .mundial h6,
+body .mundial span,
+body .mundial a {
   color: white;
   font-size: 1rem;
 }
@@ -180,7 +183,8 @@ body main h3 {
   font-size: calc(0.8 * (1rem + 1vw));
   color: #00FF41;
 }
-body main p, body main a {
+body main p,
+body main a {
   color: #00FF41;
   width: 90%;
   font-size: calc(0.5 * (1rem + 1vw));
@@ -305,7 +309,8 @@ body main p, body main a {
   body footer {
     margin-top: calc(2 * (1rem + 1vw));
   }
-  body main p, body main a {
+  body main p,
+  body main a {
     color: #00FF41;
     width: 75%;
   }

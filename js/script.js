@@ -294,10 +294,10 @@ let mes = fechaActual.getMonth() +1;
 
 //console.log(localStorage.getItem("la-caja-boba_AB-test") === "true")
 
-if(mes >= 2 && dia >= 13 || localStorage.getItem("la-caja-boba_AB-test") == "true") {
-  document.getElementById("nuevaversionPrimerMensaje").classList.add("oculto")
-  document.getElementById("nuevaversion").classList.remove("oculto");
-}
+// if(mes >= 2 && dia >= 13 || localStorage.getItem("la-caja-boba_AB-test") == "true") {
+//   document.getElementById("nuevaversionPrimerMensaje").classList.add("oculto")
+//   document.getElementById("nuevaversion").classList.remove("oculto");
+// }
 
 if(mes >= 3) {
   location.replace("https://lacajaboba.vercel.app/?src=lacajaboba")

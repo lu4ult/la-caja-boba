@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +9,29 @@
     <!-- Primary Meta Tags -->
     <title>La caja Boba</title>
     <meta name="title" content="La caja Boba">
-    <meta name="description" content="La caja Boba permite ver varios canales de la TV argentina simultáneamente, además de la camára de diputados y senadores en vivo.">
-    <meta name="keywords" content="la caja boba, tv, tv argentina, cámara de senadores en vivo, cámara de diputados en vivo, lautaro tourn, lu4ult, tv online">
+    <meta name="description"
+        content="La caja Boba permite ver varios canales de la TV argentina simultáneamente, además de la camára de diputados y senadores en vivo.">
+    <meta name="keywords"
+        content="la caja boba, tv, tv argentina, cámara de senadores en vivo, cámara de diputados en vivo, lautaro tourn, lu4ult, tv online">
     <meta name="author" content="Lautaro Tourn">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://metatags.io/">
     <meta property="og:title" content="La caja Boba">
-    <meta property="og:description" content="La caja Boba permite ver varios canales de la TV argentina simultáneamente, además de la camára de diputados y senadores en vivo.">
-    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <meta property="og:description"
+        content="La caja Boba permite ver varios canales de la TV argentina simultáneamente, además de la camára de diputados y senadores en vivo.">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://metatags.io/">
     <meta property="twitter:title" content="La caja Boba">
-    <meta property="twitter:description" content="La caja Boba permite ver varios canales de la TV argentina simultáneamente, además de la camára de diputados y senadores en vivo.">
-    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <meta property="twitter:description"
+        content="La caja Boba permite ver varios canales de la TV argentina simultáneamente, además de la camára de diputados y senadores en vivo.">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
     <link rel="icon" type="image/x-icon" href="https://pngimg.com/uploads/tv/tv_PNG39225.png">
     <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/live-tv-1780813-1514389.png">
@@ -35,15 +42,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "b8t771pxph");
     </script>
 
     <!-- Animate.style -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -52,6 +59,7 @@
 
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
     <header>
         <div>
@@ -77,78 +85,152 @@
         </div>
     </div>
 
-    <div class="tvGrande" id="tvGrande">
+    <!-- <div class="tvGrande" id="tvGrande">
         Arrastrame una de las pantallas! (cursor verde)
-    </div>
-    <div class="nuevaversion" id="nuevaversionPrimerMensaje">
-        <p>Hola! Te quería contar que estamos trabajando en La Caja Boba 2.0. En esta nueva versión vas a poder elegir los canales, reordenarlos, elegir qué dolares ver, entre otras nuevas funciones que estamos preparando.</p>
-        <p>Te invito a probarla accediendo al nuevo link <a href="https://lacajaboba.vercel.app">haciendo click aquí.</a></p>
-    </div>
+    </div> -->
 
-    <div class="nuevaversion oculto" id="nuevaversion">
+    <div class="nuevaversion" id="nuevaversion">
         <strong>Importante: <a href="https://lacajaboba.vercel.app">Nos mudamos a lacajaboba.vercel.app</a></strong>
-        <p>A partir del 1 de marzo este link dejará de estar disponible</p>
     </div>
 
-    <div class="main-container" id="main-container">
+    <!-- <div class="main-container" id="main-container">
         <div id="iframe1Container" class="left">
             <div id="monitor1" draggable="true" class="svg-container">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z" />
                 </svg>
             </div>
-            <iframe id="iframe1" src="https://www.youtube.com/embed/4OoqngSyERQ" title="C5N" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div id="iframe2Container" class="center"><div id="monitor2" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z"/></svg></div>
-            <iframe id="iframe2" src="https://www.youtube.com/embed/o8JBz0XFS_k" title="A24" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div id="iframe3Container" class="right"><div id="monitor3" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z"/></svg></div>
-            <iframe id="iframe3" src="https://www.youtube.com/embed/wHn1_QVoXGM" title="TN" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div id="iframe4Container" class="left"><div id="monitor4" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z"/></svg></div>
-            <iframe id="iframe4" src="https://www.youtube.com/embed/9KKwqJsMLDg" title="Diputados TV" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div id="iframe5Container" class="center"><div id="monitor5" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z"/></svg></div>
-            <iframe id="iframe5" src="https://www.youtube.com/embed/InSydaLSSlw" title="Senadores" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div id="iframe6Container" class="right"><div id="monitor6" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z"/></svg></div>
-            <iframe id="iframe6" src="https://www.youtube.com/embed/IOSVORAZnRY" title="LN+" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    </div>
+            <iframe id="iframe1" src="https://www.youtube.com/embed/4OoqngSyERQ" title="C5N"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div id="iframe2Container" class="center">
+            <div id="monitor2" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <path
+                        d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z" />
+                </svg></div>
+            <iframe id="iframe2" src="https://www.youtube.com/embed/o8JBz0XFS_k" title="A24"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div id="iframe3Container" class="right">
+            <div id="monitor3" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <path
+                        d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z" />
+                </svg></div>
+            <iframe id="iframe3" src="https://www.youtube.com/embed/wHn1_QVoXGM" title="TN"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div id="iframe4Container" class="left">
+            <div id="monitor4" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <path
+                        d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z" />
+                </svg></div>
+            <iframe id="iframe4" src="https://www.youtube.com/embed/9KKwqJsMLDg" title="Diputados TV"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div id="iframe5Container" class="center">
+            <div id="monitor5" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <path
+                        d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z" />
+                </svg></div>
+            <iframe id="iframe5" src="https://www.youtube.com/embed/InSydaLSSlw" title="Senadores"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div id="iframe6Container" class="right">
+            <div id="monitor6" draggable="true" class="svg-container"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <path
+                        d="M278.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l9.4-9.4V224H109.3l9.4-9.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-9.4-9.4H224V402.7l-9.4-9.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l64 64c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-9.4 9.4V288H402.7l-9.4 9.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l9.4 9.4H288V109.3l9.4 9.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-64-64z" />
+                </svg></div>
+            <iframe id="iframe6" src="https://www.youtube.com/embed/IOSVORAZnRY" title="LN+"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div> -->
 
     <button class="scrollToFit" onclick="scrollearPantalla();">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M32 64C14.3 64 0 49.7 0 32S14.3 0 32 0l96 0c53 0 96 43 96 96l0 306.7 73.4-73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-128 128c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 402.7 160 96c0-17.7-14.3-32-32-32L32 64z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path
+                d="M32 64C14.3 64 0 49.7 0 32S14.3 0 32 0l96 0c53 0 96 43 96 96l0 306.7 73.4-73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-128 128c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 402.7 160 96c0-17.7-14.3-32-32-32L32 64z" />
+        </svg>
     </button>
 
     <div class="cafe animate__animated animate__fadeInDownBig">
-        <a class="animate__animated animate__heartBeat animate__delay-3s animate__repeat-3" href='https://cafecito.app/lu4ult' rel='noopener' target='_blank'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>
+        <a class="animate__animated animate__heartBeat animate__delay-3s animate__repeat-3"
+            href='https://cafecito.app/lu4ult' rel='noopener' target='_blank'><img
+                srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x'
+                src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>
     </div>
 
     <main>
         <h2>Sobre la caja boba</h2>
-        <p><strong>La caja boba</strong> nace durante los primeros meses de la pandemia de Covid-19, allá por mayo/junio del 2020, en un momento en el que consumir las noticias se volvió una necesidad para informarnos sobre la situación del virus y de las restricciones que su llegada al país acarreaba.</p>
-        <p>Ante la abundancia de información, muchas veces redundante o innecesaria, muchos de nosotros incurríamos en la práctica de abrir dos noticieros en Youtube, en distintas pestañas, para poder verlos simultáneamente y cambiar entre uno y otro de acuerdo al interés de la información.</p>
-        <p>Era una forma de hacer “zapping” actualizada, más moderna, no entre canales de televisión sino entre canales de Youtube. Nada se pierde, todo se recicla.</p>
-        <p>Un día se me ocurrió que podía hacer de esta práctica una nueva herramienta: una página web que cumpliera el objetivo que precariamente resolvíamos con esa especie de "pantalla dividida".</p>
-        <p>Un rápido googleo arrojó que no existía una web que resolviera esta situación, así que nos pusimos manos a la obra (léase: dedos sobre el teclado).</p>
-        <p>El tiempo pasó y la vorágine social, sanitaria y política nos presentó una nueva necesidad: ver en vivo la actividad en la Cámara de Diputados y/o Senadores de la Nación.</p>
-        <p>Hubo ocasiones en las que se trataban proyectos de ley o debates que queríamos consumir, y los noticieros no nos brindaban lo que queríamos, tan solo unas breves escenas de lo que sucedía en la Cámara Baja o Alta, según el momento.</p>
+        <p><strong>La caja boba</strong> nace durante los primeros meses de la pandemia de Covid-19, allá por mayo/junio
+            del 2020, en un momento en el que consumir las noticias se volvió una necesidad para informarnos sobre la
+            situación del virus y de las restricciones que su llegada al país acarreaba.</p>
+        <p>Ante la abundancia de información, muchas veces redundante o innecesaria, muchos de nosotros incurríamos en
+            la práctica de abrir dos noticieros en Youtube, en distintas pestañas, para poder verlos simultáneamente y
+            cambiar entre uno y otro de acuerdo al interés de la información.</p>
+        <p>Era una forma de hacer “zapping” actualizada, más moderna, no entre canales de televisión sino entre canales
+            de Youtube. Nada se pierde, todo se recicla.</p>
+        <p>Un día se me ocurrió que podía hacer de esta práctica una nueva herramienta: una página web que cumpliera el
+            objetivo que precariamente resolvíamos con esa especie de "pantalla dividida".</p>
+        <p>Un rápido googleo arrojó que no existía una web que resolviera esta situación, así que nos pusimos manos a la
+            obra (léase: dedos sobre el teclado).</p>
+        <p>El tiempo pasó y la vorágine social, sanitaria y política nos presentó una nueva necesidad: ver en vivo la
+            actividad en la Cámara de Diputados y/o Senadores de la Nación.</p>
+        <p>Hubo ocasiones en las que se trataban proyectos de ley o debates que queríamos consumir, y los noticieros no
+            nos brindaban lo que queríamos, tan solo unas breves escenas de lo que sucedía en la Cámara Baja o Alta,
+            según el momento.</p>
         <p>La solución fue muy simple: agregar los "streams" además de los canales.</p>
-        <p>El día del intento de magnicidio a la vicepresidenta Cristina Fernández fue el momento en que comprendimos la utilidad de lo que habíamos creado: una herramienta simple y rápida que nos permitía ver en el instante los hechos desde los distintos puntos de vista de los principales canales, analizar cómo titulaba cada cuál la noticia en desarrollo, y satisfacer nuestra ansiedad informativa.</p>
+        <p>El día del intento de magnicidio a la vicepresidenta Cristina Fernández fue el momento en que comprendimos la
+            utilidad de lo que habíamos creado: una herramienta simple y rápida que nos permitía ver en el instante los
+            hechos desde los distintos puntos de vista de los principales canales, analizar cómo titulaba cada cuál la
+            noticia en desarrollo, y satisfacer nuestra ansiedad informativa.</p>
         <p></p>
-        <p>Desde ese triste jueves, nuevas funciones se han ido agregando: la visualización del precio del dólar, poder agrandar la pantalla individualmente al pasarle el mouse por encima, y quizás la más importante: que el sitio sea “full-responsive”, es decir, se adapte al tamaño de pantalla en el que se abra.</p>
-        <p>Todo ello sin perder de vista el objetivo principal: una solución rápida y simple a nuestra avidez de información de actualidad.</p>
+        <p>Desde ese triste jueves, nuevas funciones se han ido agregando: la visualización del precio del dólar, poder
+            agrandar la pantalla individualmente al pasarle el mouse por encima, y quizás la más importante: que el
+            sitio sea “full-responsive”, es decir, se adapte al tamaño de pantalla en el que se abra.</p>
+        <p>Todo ello sin perder de vista el objetivo principal: una solución rápida y simple a nuestra avidez de
+            información de actualidad.</p>
         <h3>¿Cómo colaborar con el proyecto?</h3>
-        <p>El proyecto de “La caja boba” es "opensource", lo que significa que podés ver el código en el repositorio de github. Si tenés un cambio, una mejora, o simplemente corregir un link caído, nos haces un "pull request" y te lo vamos a re agradecer.</p>
+        <p>El proyecto de “La caja boba” es "opensource", lo que significa que podés ver el código en el repositorio de
+            github. Si tenés un cambio, una mejora, o simplemente corregir un link caído, nos haces un "pull request" y
+            te lo vamos a re agradecer.</p>
         <a target="_blank" href="https://github.com/lu4ult/la-caja-boba">Link aquí</a>
-        <p>También podés avisarnos cuando uno de los links de los canales esté caído, enviándome un mensaje a whatsapp:</p>
-        <a target="_blank" href="https://wa.me/542954692293?text=Hola%21%0AQuer%C3%ADa%20avisarte%20que%20uno%20de%20los%20links%20de%20%2ALa%20caja%20boba%2A%20est%C3%A1%20ca%C3%ADdo.">Whatsapp</a>
-        <p>Y si querés hacernos un aporte para la yerba y los criollitos (estamos radicados en la ciudad de Córdoba), donanos un “cafecito” presionando el logo que aparece más arriba.</p>
+        <p>También podés avisarnos cuando uno de los links de los canales esté caído, enviándome un mensaje a whatsapp:
+        </p>
+        <a target="_blank"
+            href="https://wa.me/542954692293?text=Hola%21%0AQuer%C3%ADa%20avisarte%20que%20uno%20de%20los%20links%20de%20%2ALa%20caja%20boba%2A%20est%C3%A1%20ca%C3%ADdo.">Whatsapp</a>
+        <p>Y si querés hacernos un aporte para la yerba y los criollitos (estamos radicados en la ciudad de Córdoba),
+            donanos un “cafecito” presionando el logo que aparece más arriba.</p>
     </main>
 
     <footer>
-        <div><a target="_blank" href="https://www.instagram.com/lu4ult.hex/"><img src="./images/ig.png" alt="Link a perfil en Instagram"></a></div>
-        <div class="animate__animated animate__shakeX"><a target="_blank" href="https://github.com/lu4ult"><img id="github-logo" src="./images/github.png" alt="Link a perfil en Github"></a></div>
-        <div class="animate__animated animate__fadeInDownBig"><a target="_blank" href="https://www.linkedin.com/in/lautaro-tourn/"><img src="./images/linkedin.png" alt="Link a perfil en Linkedin"></a></div>
+        <div><a target="_blank" href="https://www.instagram.com/lu4ult.hex/"><img src="./images/ig.png"
+                    alt="Link a perfil en Instagram"></a></div>
+        <div class="animate__animated animate__shakeX"><a target="_blank" href="https://github.com/lu4ult"><img
+                    id="github-logo" src="./images/github.png" alt="Link a perfil en Github"></a></div>
+        <div class="animate__animated animate__fadeInDownBig"><a target="_blank"
+                href="https://www.linkedin.com/in/lautaro-tourn/"><img src="./images/linkedin.png"
+                    alt="Link a perfil en Linkedin"></a></div>
         <!--<div class="animate__animated animate__fadeInDownBig"><a target="_blank" href="https://www.linkedin.com/in/lautaro-tourn/"><svg><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div>-->
-        <div><a target="_blank" href="https://wa.me/542954692293?text=Hola%21%0AVengo%20de%20%2ALa%20Caja%20Boba%2A"><img src="./images/wa.png" alt="Link a chat en Whatsapp"></a></div>
+        <div><a target="_blank"
+                href="https://wa.me/542954692293?text=Hola%21%0AVengo%20de%20%2ALa%20Caja%20Boba%2A"><img
+                    src="./images/wa.png" alt="Link a chat en Whatsapp"></a></div>
     </footer>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="js/dolar.js"></script>
     <script src="js/script.js"></script>
     <script>AOS.init();</script>
 </body>
+
 </html>

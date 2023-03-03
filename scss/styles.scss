@@ -1,6 +1,6 @@
-$debug-level:0;             //1: Agrega borde rojo (outline, no border para que no ocupe espacio) para ver las cajas
-                            //2: idem con !important
-                            //3: idem + background
+$debug-level: 0; //1: Agrega borde rojo (outline, no border para que no ocupe espacio) para ver las cajas
+//2: idem con !important
+//3: idem + background
 
 $baseSize: calc(1rem + 1vw);
 $verde: #00FF41;
@@ -24,17 +24,17 @@ $verde-oscuro: #03A062;
     padding: 4px;
     //padding: 20px;
 
-    @if $debug-level == 1 {
+    @if $debug-level ==1 {
         outline: 1px solid red;
     }
 
-    @if $debug-level == 2 {
+    @if $debug-level ==2 {
         outline: 1px solid red !important;
     }
 
-    @if $debug-level == 3 {
+    @if $debug-level ==3 {
         outline: 1px solid red !important;
-        background: rgba(250,10,50, 0.15);
+        background: rgba(250, 10, 50, 0.15);
     }
 
     font-size: calc(1* $baseSize);
@@ -92,8 +92,9 @@ body {
             border: 3px solid #00FF41;
 
             border-radius: 25px;
-            box-shadow: 0 0 15px 5px rgba(0,255,0,0.7);
+            box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.7);
             transition: all .5s;
+
             &:hover {
                 transition: all 3s;
                 background: #ff00be;
@@ -102,10 +103,9 @@ body {
             }
 
             grid-template-columns: 1fr;
-            grid-template-areas:
-                "titulo"
-                "compra"
-                "venta";
+            grid-template-areas: "titulo"
+            "compra"
+            "venta";
             // justify-content: center;
 
             .precio-dolar__titulo {
@@ -141,9 +141,12 @@ body {
         grid-area: nuevaversion;
         color: white;
         background-color: #ff7733;
-        p,a {
+
+        p,
+        a {
             font-size: 0.6rem;
         }
+
         a {
             color: red;
         }
@@ -163,10 +166,14 @@ body {
         justify-content: center;
         align-items: center;
         width: 70%;
-        h6, span, a {
+
+        h6,
+        span,
+        a {
             color: white;
             font-size: 1rem;
         }
+
         h6 {
             font-size: 1.5rem;
             color: red;
@@ -184,10 +191,11 @@ body {
         gap: 0;
         grid-template-columns: repeat(1, 1fr);
         align-items: center;
+
         div {
             .svg-container {
                 display: none;
-               }
+            }
 
             iframe {
                 justify-self: center;
@@ -202,17 +210,18 @@ body {
     }
 
     .cafe {
-      grid-area: cafecito;
-      margin-top: calc(2 * $baseSize);
-      z-index: 20;
-      position: sticky;
-      top:0;
-      background: #000;
-      height: 65px;
-      @extend .fila;
-      a {
+        grid-area: cafecito;
+        margin-top: calc(2 * $baseSize);
+        z-index: 20;
+        position: sticky;
+        top: 0;
+        background: #000;
+        height: 65px;
         @extend .fila;
-      }
+
+        a {
+            @extend .fila;
+        }
     }
 
     footer {
@@ -235,8 +244,10 @@ body {
             background: #fff;
             border-radius: 50%;
         }
+
         div {
             @extend .fila;
+
             // height: 100%;
             // aspect-ratio: 1;
             img {
@@ -254,18 +265,22 @@ body {
         grid-area: main;
         @extend .fila;
         flex-direction: column;
+
         h2 {
             margin-top: calc(4 * $baseSize);
             margin-bottom: calc(1 * $baseSize);
             font-size: calc(1.5 * $baseSize);
             color: $verde;
         }
+
         h3 {
             margin: calc(1 * $baseSize);
             font-size: calc(0.8 * $baseSize);
             color: $verde;
         }
-        p, a {
+
+        p,
+        a {
             color: $verde;
             width: 90%;
             font-size: calc(0.5 * $baseSize);
@@ -281,8 +296,8 @@ body {
                 width: 25%;
                 grid-template-columns: 1fr 1fr;
                 grid-template-areas:
-                "titulo titulo"
-                "compra venta";
+                    "titulo titulo"
+                    "compra venta";
             }
         }
 
@@ -324,30 +339,35 @@ body {
 
         .main-container {
             grid-template-columns: repeat(2, 1fr);
+
             div {
                 position: relative;
+
                 //background-color: #ccc;
                 .svg-container {
                     display: block;
+
                     svg {
                         position: absolute;
                         right: 20px;
                         top: 100px;
                         width: 50px;
                         height: 50px;
-                        fill: rgba(68,68,68,0.2);
+                        fill: rgba(68, 68, 68, 0.2);
                         cursor: pointer;
                     }
                 }
+
                 iframe {
                     width: 100%;
                     aspect-ratio: 16/9;
                     transition: all .3s;
                 }
+
                 &:hover {
-                     .svg-container {
+                    .svg-container {
                         svg {
-                           fill: green;
+                            fill: green;
                         }
                     }
                 }
@@ -407,18 +427,21 @@ body {
             background-color: transparent;
             outline: none;
             border: none;
+
             svg {
                 background-color: inherit;
                 width: 50px;
                 height: 50px;
-                fill: rgba(68,68,68,0.9);
+                fill: rgba(68, 68, 68, 0.9);
             }
 
             &:hover {
                 cursor: pointer;
+
                 svg {
                     fill: green;
                 }
+
                 &::after {
                     position: absolute;
                     top: 55px;
@@ -433,8 +456,11 @@ body {
         footer {
             margin-top: calc(2 * $baseSize);
         }
+
         main {
-            p, a {
+
+            p,
+            a {
                 color: $verde;
                 width: 75%;
             }
